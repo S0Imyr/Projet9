@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from review.models import Ticket, Review
+
+def flux(request):
+    article1 = Ticket.objects.all()
+    article2 = Review.objects.all()
+    return render(request, 'flux.html', {'article1': article1, 'article2': article2})
