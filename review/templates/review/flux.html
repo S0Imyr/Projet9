@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% for article in articles %}
+        {% if article %}
+            <div>{{ article }}</div>
+        {% else %}
+            <p>Base de donnée vide</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
