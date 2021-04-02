@@ -1,10 +1,21 @@
 {% extends 'main.html' %}
 {% block content %}
-    {% for article in articles %}
-        {% if article %}
-            <div>{{ article }}</div>
-        {% else %}
-            <p>Base de donnée vide</p>
-        {% endif %}
-    {% endfor %}
+    <div class="buttons">
+        <button>Demander une critique</button>
+        <button>Créer une critique</button>
+    </div>
+    <div class='articles'>
+        {{ articles }}
+        {% for article in articles %}
+            {% if article %}
+                {% if article.type %}
+                    <div>{{ article.content.image }}</div>
+                {% else %}
+                    <div>{{ article.content.rating }}</div>
+                {% endif %}
+            {% else %}
+                <p>Base de donnée vide</p>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

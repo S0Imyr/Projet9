@@ -12,5 +12,7 @@ def flux(request):
     articles = sorted(chain(tickets, reviews),
                       key=attrgetter('time_created'),
                       reverse=True)
-
-    return render(request, 'review/flux.html', {'articles': articles})
+    response = []
+    for article in articles:
+        response.append({"content": article, "type": isinstance(article, Ticket)})
+    return render(request, 'review/flux.html', {'articles': response})
