@@ -1,8 +1,8 @@
 {% extends 'main.html' %}
 {% block content %}
     <div class="buttons">
-        <button>Demander une critique</button>
-        <button>Créer une critique</button>
+        <a href="{% url 'addticket' %}"><button>Demander une critique</button></a>
+        <a href="{% url 'addticket' %}"></a><button>Créer une critique</button></a>
     </div>
     <div class='flux'>
         {% for article in articles %}

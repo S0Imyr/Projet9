@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from operator import attrgetter
 from itertools import chain
 
@@ -18,11 +18,32 @@ def flux(request):
     context = {'articles': response}
     return render(request, 'flux.html', context)
 
-def create_ticket(request):
-    form = TicketForm()
-    return render(request, 'addticket.html', {'form': form})
+
+def create_ticket(request, id_ticket=None):
+    if id_ticket is not None:
+        ticket = Ticket.objects.get(pk=id_ticket)
+    else:
+        ticket = None
+    if request.method == 'GET':
+        form = TicketForm(instance=ticket)
+        return render(request, 'addticket.html', {'form': form})
+    elif request.method == 'POST':
+        form = TicketForm(request.POST)
+        if form.is_valid():
+            article = form.save()
+            return redirect('flux')
 
 
-def create_review(request):
-    form = ReviewForm()
-    return render(request, 'addreview.html', {'form': form})
+def create_review(request, id_review=None):
+    if id_review is not None:
+        review = Review.objects.get(pk=id_review)
+    else:
+        review = None
+    if request.method == 'GET':
+        form = ReviewForm(instance=review)
+        return render(request, 'addreview.html', {'form': form})
+    elif request.method == 'POST':
+        form = TReviewForm(request.POST)
+        if form.is_valid():
+            article = form.save()
+            return redirect('flux')
