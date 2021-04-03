@@ -2,7 +2,7 @@
 {% block content %}
     <div class="buttons">
         <a href="{% url 'addticket' %}"><button>Demander une critique</button></a>
-        <a href="{% url 'addticket' %}"></a><button>Créer une critique</button></a>
+        <a href="{% url 'addticket' %}"><button>Créer une critique</button></a>
     </div>
     <div class='flux'>
         {% for article in articles %}
@@ -64,10 +64,10 @@
                         {% endif %}
                     </div>
                 {% endif %}
-            <button>Voir plus</button>
             {% else %}
                 <p>Base de donnée vide</p>
             {% endif %}
         {% endfor %}
+        <button>Voir plus</button>
     </div>
 {% endblock %}

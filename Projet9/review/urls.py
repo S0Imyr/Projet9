@@ -9,4 +9,5 @@ urlpatterns = [
     path('addticket/<int:id_ticket>', views.create_ticket, name="addticket"),
     path('addreview/', views.create_review, name="addreview"),
     path('addreview/<int:id_review>', views.create_review, name="addreview"),
+    path('addticketreview/', views.create_ticketreview, name="addticketreview"),
 ]

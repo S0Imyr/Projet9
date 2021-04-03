@@ -1,0 +1,9 @@
+<form method="POST" action="{% url 'addreview' %}">
+    {% csrf_token %}
+    {{ ticketform }}
+</form>
+-----
+<form method="POST" action="{% url 'addreview' %}">
+    {% csrf_token %}
+    {{ reviewform }}
+</form>
