@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% block content %}
+    <form method="POST" action="{% url addreview %}">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit"/>
+    </form>
+
+{% endblock %}
