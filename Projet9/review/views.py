@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from operator import attrgetter
 from itertools import chain
 
-
 from review.models import Ticket, Review
 from review.forms import TicketForm, ReviewForm
+
 
 def flux(request):
     tickets = Ticket.objects.all()
