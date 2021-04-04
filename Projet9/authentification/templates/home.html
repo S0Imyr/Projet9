@@ -15,6 +15,9 @@
             <input type="submit" name="Log in" value="Se connecter">
         </form> 
     </div>
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
 </div>
 <div>
     <p>Vous n'avez pas de compte : <a href="{% url 'account' %}"> Créer votre compte </a> </p>

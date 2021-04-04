@@ -19,7 +19,7 @@ def register(request):
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request, "Le compte a été créé au nom de :" + user)
-            return redirect('account')
+            return redirect('home')
 
     context = {'form': form}
     return render(request, 'createaccount.html', context)
