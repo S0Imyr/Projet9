@@ -1,9 +1,22 @@
 {% extends 'main.html' %}
 {% block content %}
 <div>
-    <h1>Log in</h1>
+    <h1>Connectez vous :</h1>
+    <div class="login-box">
+        <form method="POST" action="">
+            <div class="username">
+                <div class="username__label"> {{ form.username.label }} </div>
+                <div class="username__input"> {{ form.username }} </div>
+            </div>
+            <div class="password1">
+                <div class="password1__label"> {{ form.password1.label }} </div>
+                <div class="password1__input"> {{ form.password1 }} </div>
+            </div>
+            <input type="submit" name="Log in" value="Se connecter">
+        </form> 
+    </div>
 </div>
 <div>
-    <h1>Sign in</h1>
+    <p>Vous n'avez pas de compte : <a href="{% url 'account' %}"> Créer votre compte </a> </p>
 </div>
 {% endblock %}

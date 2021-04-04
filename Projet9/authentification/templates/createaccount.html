@@ -1,11 +1,25 @@
 {% extends 'main.html' %}
 {% block content %}
 <h1>Inscription</h1>
-<div>
+<div class="creation-box">
     <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="username">
+            <div class="username__label"> {{ form.username.label }} </div>
+            <div class="username__input"> {{ form.username }} </div>
+        </div>
+        <div class="password1">
+            <div class="password1__label"> {{ form.password1.label }} </div>
+            <div class="password1__input"> {{ form.password1 }} </div>
+        </div>
+            
+        <div class="password2">
+            <div class="password2__label"> {{ form.password2.label }} </div>
+            <div class="password2__input"> {{ form.password2 }} </div>
+        </div>
+        <input type="submit" name="Create User">
     </form>
-    <input type="submit" name="Create User">
+    {{ form.errors }}
+    <p> Vous avez déjà un compte : <a href="{% url 'home' %}" >Connectez vous</a></p>
 </div>
 {% endblock %}
