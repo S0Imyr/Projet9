@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 {% block content %}
 <h1>Inscription</h1>
-<div>Formulaire</div>
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+    <input type="submit" name="Create User">
+</div>
 {% endblock %}
