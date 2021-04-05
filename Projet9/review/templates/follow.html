@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+<header>
+    <h1>Mes abonnements</h1>
+</header>
+<div class="content">
+    <div class="follow">
+        <h2>Suivre d'autres utilisateurs</h2>
+    </div>
+    <div class="followed">
+        <h2>Abonnements</h2>
+        <table>
+            <tr><td>--Utilisateur1--</td><td><button>Désabonner</button></td></tr>
+            <tr><td>--Utilisateur2--</td><td><button>Désabonner</button></td></tr>
+            <tr><td>--Utilisateur3--</td><td><button>Désabonner</button></td></tr>
+        </table>
+    </div>
+    <div class="followers">
+        <h2>Abonnés</h2>
+        <table>
+            <tr><td>--Utilisateur1--</td></tr>
+            <tr><td>--Utilisateur2--</td></tr>
+            <tr><td>--Utilisateur3--</td></tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

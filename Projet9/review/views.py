@@ -64,3 +64,13 @@ def create_ticketreview(request):
             if form.is_valid():
                 article = review.save()
                 return redirect('flux')
+
+
+def follow(request):
+    context = {}
+    return render(request, 'follow.html', context)
+
+
+def posts(request):
+    context = {}
+    return render(request, 'posts.html', context)
