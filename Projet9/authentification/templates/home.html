@@ -1,26 +1,45 @@
-{% extends 'main.html' %}
-{% block content %}
-<div>
-    <h1>Connectez vous :</h1>
-    <div class="login-box">
-        <form method="POST" action="">
-            {% csrf_token %}
-            <div class="username">
-                <div class="username__label"> <label> Nom d'utilisteur </label> </div>
-                <div class="username__input"> <input type="text" name="username"> </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIT Review</title>
+</head>
+<body>
+    <header>
+        <h1>LIT Review</h1>
+    </header>
+    <div class=content>
+        <div class="login-box">
+            <h1>Connectez vous :</h1>
+            <div class="login-box__form">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="username">
+                        <div class="username__label"> <label> Nom d'utilisteur </label> </div>
+                        <div class="username__input"> <input type="text" name="username"> </div>
+                    </div>
+                    <div class="password1">
+                        <div class="password1__label"> <label> Mot de passe </label> </div>
+                        <div class="password1__input"> <input type="password" name="password"> </div>
+                    </div>
+                    <input type="submit" name="Log in" value="Se connecter">
+                </form> 
             </div>
-            <div class="password1">
-                <div class="password1__label"> <label> Mot de passe </label> </div>
-                <div class="password1__input"> <input type="password" name="password"> </div>
+            <div class="login-box__errors">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
             </div>
-            <input type="submit" name="Log in" value="Se connecter">
-        </form> 
+        </div>
+        <div class="register-box">
+            <div>
+                <h1>Inscrivez vous :</h1>
+                <a href="{% url 'account' %}"><button>Créer votre compte</button> </a>
+            </div>
+        </div>
     </div>
-    {% for message in messages %}
-        <p>{{ message }}</p>
-    {% endfor %}
-</div>
-<div>
-    <p>Vous n'avez pas de compte : <a href="{% url 'account' %}"> Créer votre compte </a> </p>
-</div>
-{% endblock %}
+</body>
+</html>
+

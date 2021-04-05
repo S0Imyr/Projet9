@@ -19,6 +19,11 @@ def login_page(request):
     return render(request, 'home.html', context)
 
 
+def logout_user(request):
+    logout(request)
+    return redirect('home')
+
+
 def register(request):
     form = CreateUserForm()
 
@@ -34,6 +39,6 @@ def register(request):
     return render(request, 'createaccount.html', context)
 
 
-def modifyaccount(request, id_user):
+def modify_account(request, id_user):
     context = {'id_user': id_user}
     return render(request, 'modifyaccount.html')
