@@ -85,5 +85,12 @@ def follow(request):
 
 
 def posts(request):
-    context = {}
+    tickets = Ticket.objects.filter(user=request.user)
+    tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
+    reviews = Review.objects.filter(user=request.user)
+    reviews = reviews.annotate(content_type=Value('REVIEW', CharField()))
+    posts = sorted(chain(tickets, reviews),
+                      key=lambda post: post.time_created,
+                      reverse=True)
+    context = {'posts': posts}
     return render(request, 'posts.html', context)

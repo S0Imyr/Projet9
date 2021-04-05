@@ -4,6 +4,12 @@
     <h1>Mes posts</h1>
 </header>
 <div class="content">
-    --Mes posts--
+    {% for post in posts %}
+    {% if post.content_type == 'TICKET' %}
+        {% include 'ticket.html' %}
+    {% elif post.content_type == 'REVIEW' %}
+        {% include 'review.html' %}
+    {% endif %}
+{% endfor %}
 </div>
 {% endblock %}
