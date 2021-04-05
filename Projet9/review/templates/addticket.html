@@ -1,8 +1,25 @@
 {% extends 'main.html' %}
 {% block content %}
+    <div class="form-box">
     <form method="POST" action="{% url 'addticket' %}">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit"/>
+        <div class="title">
+            <div class="title__label"> {{ form.title.label }} </div>
+            <div class="title__input"> {{ form.title }} </div>
+        </div>
+        <div class="description">
+            <div class="description__label"> {{ form.description.label }} </div>
+            <div class="description__input"> {{ form.description }} </div>
+        </div>
+        <div class="image">
+            <div class="image__label"> {{ form.image.label }} </div>
+            <div class="image__input"> {{ form.image }} </div>
+        </div>
+        <div class="user">
+            <div class="user__label"> {{ form.user.label }} </div>
+            <div class="user__input"> {{ form.user }} </div>
+        </div>
+        <input type="submit" name="Create ticket">
     </form>
+    </div>
 {% endblock %}

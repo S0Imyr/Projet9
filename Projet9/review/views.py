@@ -31,7 +31,7 @@ def create_ticket(request, id_ticket=None):
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
     else:
-        ticket = None
+        ticket = Ticket(user=request.user)
     if request.method == 'GET':
         form = TicketForm(instance=ticket)
         return render(request, 'addticket.html', {'form': form})
