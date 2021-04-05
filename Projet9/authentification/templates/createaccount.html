@@ -1,25 +1,33 @@
-{% extends 'main.html' %}
-{% block content %}
-<h1>Inscription</h1>
-<div class="creation-box">
-    <form method="POST" action="">
-        {% csrf_token %}
-        <div class="username">
-            <div class="username__label"> {{ form.username.label }} </div>
-            <div class="username__input"> {{ form.username }} </div>
-        </div>
-        <div class="password1">
-            <div class="password1__label"> {{ form.password1.label }} </div>
-            <div class="password1__input"> {{ form.password1 }} </div>
-        </div>
-            
-        <div class="password2">
-            <div class="password2__label"> {{ form.password2.label }} </div>
-            <div class="password2__input"> {{ form.password2 }} </div>
-        </div>
-        <input type="submit" name="Create User">
-    </form>
-    {{ form.errors }}
-    <p> Vous avez déjà un compte : <a href="{% url 'home' %}" >Connectez vous</a></p>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIT Review</title>
+</head>
+    <body>
+    <h1>Inscription</h1>
+    <div class="creation-box">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="username">
+                <div class="username__label"> {{ form.username.label }} </div>
+                <div class="username__input"> {{ form.username }} </div>
+            </div>
+            <div class="password1">
+                <div class="password1__label"> {{ form.password1.label }} </div>
+                <div class="password1__input"> {{ form.password1 }} </div>
+            </div>
+                
+            <div class="password2">
+                <div class="password2__label"> {{ form.password2.label }} </div>
+                <div class="password2__input"> {{ form.password2 }} </div>
+            </div>
+            <input type="submit" name="Create User">
+        </form>
+        {{ form.errors }}
+        <p> Vous avez déjà un compte : <a href="{% url 'home' %}" >Connectez vous</a></p>
+    </div>
+</body>
+</html>
