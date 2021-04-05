@@ -4,13 +4,14 @@
     <h1>Connectez vous :</h1>
     <div class="login-box">
         <form method="POST" action="">
+            {% csrf_token %}
             <div class="username">
-                <div class="username__label"> {{ form.username.label }} </div>
-                <div class="username__input"> {{ form.username }} </div>
+                <div class="username__label"> <label> Nom d'utilisteur </label> </div>
+                <div class="username__input"> <input type="text" name="username"> </div>
             </div>
             <div class="password1">
-                <div class="password1__label"> {{ form.password1.label }} </div>
-                <div class="password1__input"> {{ form.password1 }} </div>
+                <div class="password1__label"> <label> Mot de passe </label> </div>
+                <div class="password1__input"> <input type="password" name="password"> </div>
             </div>
             <input type="submit" name="Log in" value="Se connecter">
         </form> 

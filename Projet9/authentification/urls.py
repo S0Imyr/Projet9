@@ -4,7 +4,7 @@ from authentification import views
 
 
 urlpatterns = [
-    path('home', views.login, name="home"),
+    path('home', views.login_page, name="home"),
     path('account', views.register, name="account"),
     path('account/<int:id_user>', views.modifyaccount, name="modifyaccount"),
 ]
