@@ -1,21 +1,29 @@
 from django.shortcuts import render, redirect
-from operator import attrgetter
+from django.db.models import CharField, Value
+
 from itertools import chain
 
 from review.models import Ticket, Review
 from review.forms import TicketForm, ReviewForm
 
 
+def get_users_viewable_tickets(user):
+    return Ticket.objects.all()
+
+
+def get_users_viewable_reviews(user):
+    return Review.objects.all()
+
+
 def flux(request):
-    tickets = Ticket.objects.all()
-    reviews = Review.objects.all()
-    articles = sorted(chain(tickets, reviews),
-                      key=attrgetter('time_created'),
+    tickets = get_users_viewable_tickets(request.user)
+    tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
+    reviews = get_users_viewable_reviews(request.user)
+    reviews = reviews.annotate(content_type=Value('REVIEW', CharField()))
+    posts = sorted(chain(tickets, reviews),
+                      key=lambda post: post.time_created,
                       reverse=True)
-    response = []
-    for article in articles:
-        response.append({"content": article, "type": isinstance(article, Ticket)})
-    context = {'articles': response}
+    context = {'posts': posts}
     return render(request, 'flux.html', context)
 
 

@@ -1,0 +1,30 @@
+<div class='review-details'>
+    <div class='review-details__user'>
+        {{ post.user }}
+    </div> 
+    <div class='review-details__time-created'>
+        {{ post.time_created }}
+    </div>
+    <div class='review-details__headline'>
+        {{ post.headline }}
+    </div>
+    <div class='review-details__rating'>
+        {{ post.rating }}
+    </div>
+    <div class='review-details__body'>
+        {{ post.body }}
+    </div>
+    <div class='review-details__ticket'>
+        <div class='review-details__ticket__user'>
+            {{ post.ticket.user }}
+        </div> 
+        <div class='review-details__ticket__title'>
+            {{ post.ticket.title }}
+        </div>
+        <div class='review-details__ticket__body'>
+            {{ post.ticket.body }}
+        </div>
+        <div class='review-details__ticket__image'>
+            {{ post.ticket.image }}
+        </div>
+    </div>

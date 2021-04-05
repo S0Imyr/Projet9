@@ -1,0 +1,20 @@
+<div class='ticket-details'>
+    <div class='ticket-details__user'>
+        {{ post.user }}
+    </div> 
+    <div class='ticket-details__time-created'>
+        {{ post.time_created }}
+    </div>
+    <div class='ticket-details__title'>
+        {{ post.title }}
+    </div>
+    <div class='ticket-details__body'>
+        {{ post.body }}
+    </div>
+    <div class='ticket-details__image'>
+        {{ post.image }}
+    </div>
+    {% if post %}
+        <button>Créer une critique</button>
+    {% endif %}
+</div>
