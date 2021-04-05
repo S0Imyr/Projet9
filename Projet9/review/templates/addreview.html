@@ -1,12 +1,35 @@
 {% extends 'main.html' %}
 {% block content %}
+    <header>
+        <h1>Créer une critique</h1>
+    </header>
     <div>
-        {{ form.instance.ticket }}
+        <p>Vous êtes en train de poster en réponse à</p>
+        {% include 'ticket.html' %}
     </div>
     <div>
         <form method="POST" action="{% url 'addreview' %}">
             {% csrf_token %}
-            {{ form }}
+            <div class="rating">
+                <div class="rating__label"> {{ form.rating.label }} </div>
+                <div class="rating__input"> {{ form.rating }} </div>
+            </div>
+            <div class="headline">
+                <div class="headline__label"> {{ form.headline.label }} </div>
+                <div class="headline__input"> {{ form.headline }} </div>
+            </div>
+            <div class="body">
+                <div class="body__label"> {{ form.body.label }} </div>
+                <div class="body__input"> {{ form.body }} </div>
+            </div>
+            <div class="ticket">
+                <div class="ticket__label"> {{ form.ticket.label }} </div>
+                <div class="ticket__input"> {{ form.ticket }} </div>
+            </div>
+            <div class="user">
+                <div class="user__label"> {{ form.user.label }} </div>
+                <div class="user__input"> {{ form.user }} </div>
+            </div>
             <input type="submit"/>
         </form>
     </div>

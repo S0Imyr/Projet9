@@ -44,14 +44,19 @@ def create_ticket(request, id_ticket=None):
 
 def create_review(request, id_review=None, id_ticket=None):
     review = None
+    context = {}
     if id_review is not None:
         review = Review.objects.get(pk=id_review)
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
-        review = Review(ticket=ticket, rating=None, headline=None, body=None, user=None,time_created=None)
+        context['post'] = ticket
+        review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
+    else:
+        review = Review(ticket=None, rating=None, headline=None, body=None, user=request.user, time_created=None)
     if request.method == 'GET':
         form = ReviewForm(instance=review)
-        return render(request, 'addreview.html', {'form': form})
+        context['form'] = form
+        return render(request, 'addreview.html', context)
     elif request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
