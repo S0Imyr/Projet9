@@ -1,6 +1,10 @@
 <div class='review-details'>
     <div class='review-details__user'>
-        {{ post.content.user }}
+        {% if post.content.user == request.user %}
+            <p>Vous avez publié une critique :</p>
+        {% else %}
+            <p>{{ post.content.user }} a publié une critique :</p>
+        {% endif %}
     </div> 
     <div class='review-details__time-created'>
         {{ post.content.time_created }}

@@ -1,7 +1,11 @@
 <div class='ticket-details'>
     <div class='ticket-details__user'>
-        {{ post.content.user }}
-    </div> 
+        {% if post.content.user == request.user %}
+            <p>Vous avez demandé une critique :</p>
+        {% else %}
+            <p>{{ post.content.user }} a demandé une critique :</p>
+        {% endif %}
+    </div>
     <div class='ticket-details__time-created'>
         {{ post.content.time_created }}
     </div>
