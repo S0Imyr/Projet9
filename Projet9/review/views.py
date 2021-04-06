@@ -93,6 +93,7 @@ def create_review(request, id_review=None, id_ticket=None):
         review = Review.objects.get(pk=id_review)
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
+        ticket.answered = True
         context['post'] = ticket
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:

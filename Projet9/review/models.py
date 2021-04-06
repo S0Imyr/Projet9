@@ -10,6 +10,7 @@ class Ticket(models.Model):
                              on_delete=models.CASCADE)
     image = models.ImageField(null=True, upload_to='images', blank=True)
     time_created = models.DateTimeField(auto_now_add=True)
+    answered = False
 
 
 class Review(models.Model):
