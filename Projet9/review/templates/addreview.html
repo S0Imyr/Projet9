@@ -8,6 +8,7 @@
         {% include 'ticket.html' %}
     </div>
     <div>
+        {{ form.errors }}
         <form method="POST" action="">
             {% csrf_token %}
             <div class="rating">

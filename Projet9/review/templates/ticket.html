@@ -14,7 +14,7 @@
     <div class='ticket-details__image'>
         {{ post.content.image }}
     </div>
-    {% if post.content.answered %}
+    {% if not post.content.answered and post.content.id %}
         <a href='{% url "addreview" id_ticket=post.content.id %}'><button>Créer une critique</button></a>
     {% endif %}
 </div>

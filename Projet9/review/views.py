@@ -83,6 +83,8 @@ def create_ticket(request, id_ticket=None):
         if form.is_valid():
             article = form.save()
             return redirect('flux')
+        else:
+            return render(request, 'addticket.html', {'form': form})
 
 
 @login_required(login_url='home')
@@ -104,7 +106,7 @@ def modify_ticket(request, id_ticket):
 
 @login_required(login_url='home')
 def delete_ticket(request, id_ticket):
-    ticket = Ticket.objects.filter(pk=id_ticket)
+    ticket = Ticket.objects.get(pk=id_ticket)
     ticket.delete()
     return redirect('posts')
 
@@ -115,7 +117,6 @@ def create_review(request, id_ticket=None):
     context = {}
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
-        ticket.answered = True
         context['post'] = ticket
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:
@@ -129,6 +130,8 @@ def create_review(request, id_ticket=None):
         if form.is_valid():
             article = form.save()
             return redirect('flux')
+        else:
+            return render(request, 'addreview.html', context)
 
 
 @login_required(login_url='home')
@@ -150,7 +153,7 @@ def modify_review(request, id_review):
 
 @login_required(login_url='home')
 def delete_review(request, id_review):
-    review = Review.objects.filter(pk=id_review)
+    review = Review.objects.get(pk=id_review)
     review.ticket.answered = False
     review.delete()
     return redirect('posts')
