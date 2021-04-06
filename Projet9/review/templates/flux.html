@@ -6,9 +6,9 @@
     </div>
     <div class='flux'>
         {% for post in posts %}
-            {% if post.content_type == 'TICKET' %}
+            {% if post.type == 'TICKET' %}
                 {% include 'ticket.html' %}
-            {% elif post.content_type == 'REVIEW' %}
+            {% elif post.type == 'REVIEW' %}
                 {% include 'review.html' %}
             {% endif %}
         {% endfor %}

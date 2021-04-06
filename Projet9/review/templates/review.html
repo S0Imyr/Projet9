@@ -1,30 +1,30 @@
 <div class='review-details'>
     <div class='review-details__user'>
-        {{ post.user }}
+        {{ post.content.user }}
     </div> 
     <div class='review-details__time-created'>
-        {{ post.time_created }}
+        {{ post.content.time_created }}
     </div>
     <div class='review-details__headline'>
-        {{ post.headline }}
+        {{ post.content.headline }}
     </div>
     <div class='review-details__rating'>
-        {{ post.rating }}
+        {{ post.content.rating }}
     </div>
     <div class='review-details__body'>
-        {{ post.body }}
+        {{ post.content.body }}
     </div>
     <div class='review-details__ticket'>
         <div class='review-details__ticket__user'>
-            {{ post.ticket.user }}
+            {{ post.content.ticket.user }}
         </div> 
         <div class='review-details__ticket__title'>
-            {{ post.ticket.title }}
+            {{ post.content.ticket.title }}
         </div>
         <div class='review-details__ticket__body'>
-            {{ post.ticket.body }}
+            {{ post.content.ticket.body }}
         </div>
         <div class='review-details__ticket__image'>
-            {{ post.ticket.image }}
+            {{ post.content.ticket.image }}
         </div>
     </div>

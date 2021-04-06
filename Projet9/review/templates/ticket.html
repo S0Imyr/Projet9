@@ -1,20 +1,20 @@
 <div class='ticket-details'>
     <div class='ticket-details__user'>
-        {{ post.user }}
+        {{ post.content.user }}
     </div> 
     <div class='ticket-details__time-created'>
-        {{ post.time_created }}
+        {{ post.content.time_created }}
     </div>
     <div class='ticket-details__title'>
-        {{ post.title }}
+        {{ post.content.title }}
     </div>
     <div class='ticket-details__body'>
-        {{ post.body }}
+        {{ post.content.body }}
     </div>
     <div class='ticket-details__image'>
-        {{ post.image }}
+        {{ post.content.image }}
     </div>
-    {% if post.id %}
-        <a href='{% url "addreview" id_ticket=post.id %}'><button>Créer une critique</button></a>
+    {% if post.content.id %}
+        <a href='{% url "addreview" id_ticket=post.content.id %}'><button>Créer une critique</button></a>
     {% endif %}
 </div>

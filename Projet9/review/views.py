@@ -9,24 +9,63 @@ from review.models import Ticket, Review, UserFollows
 from review.forms import TicketForm, ReviewForm
 
 
+def get_followed_user(user):
+    followed_users=[]
+    for link in UserFollows.objects.filter(user=user):
+        followed_users.append(link.followed_user)
+    return followed_users
+
+
+def get_followers(user):
+    followers=[]
+    for link in UserFollows.objects.filter(followed_user=user):
+        followers.append(link.user)
+    return followers
+
+
 def get_users_viewable_tickets(user):
-    return Ticket.objects.all()
+    tickets = []
+    followed_users = get_followed_user(user)
+    followed_users.append(user)
+    for followed_user in followed_users:
+        tickets.extend(Ticket.objects.filter(user=followed_user))
+    return tickets
 
 
 def get_users_viewable_reviews(user):
-    return Review.objects.all()
+    reviews = []
+    followed_users = get_followers(user)
+    followed_users.append(user)
+    my_tickets = Ticket.objects.filter(user=user)
+    for ticket in my_tickets:
+        relative_reviews = Review.objects.filter(ticket=ticket)
+        for review in relative_reviews:
+            if review.user not in followed_users:
+                reviews.append(review)
+    for followed_user in followed_users:
+        reviews.extend(Review.objects.filter(user=followed_user))
+    return reviews
+
+
+def annotate_post(posts):
+    response = []
+    for post in posts:
+        if isinstance(post, Ticket):
+            obj = {'content': post, 'type': 'TICKET'}
+        elif isinstance(post, Review):
+            obj = {'content': post, 'type': 'REVIEW'}
+        response.append(obj)
+    return response
 
 
 @login_required(login_url='home')
 def flux(request):
     tickets = get_users_viewable_tickets(request.user)
-    tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
     reviews = get_users_viewable_reviews(request.user)
-    reviews = reviews.annotate(content_type=Value('REVIEW', CharField()))
     posts = sorted(chain(tickets, reviews),
                       key=lambda post: post.time_created,
                       reverse=True)
-    context = {'posts': posts}
+    context = {'posts': annotate_post(posts)}
     return render(request, 'flux.html', context)
 
 
