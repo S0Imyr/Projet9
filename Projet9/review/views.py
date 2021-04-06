@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 
 from itertools import chain
 
-from review.models import Ticket, Review
+from authentification.models import User
+from review.models import Ticket, Review, UserFollows
 from review.forms import TicketForm, ReviewForm
 
 
@@ -87,7 +88,20 @@ def create_ticketreview(request):
 @login_required(login_url='home')
 def follow(request):
     context = {}
-    return render(request, 'follow.html', context)
+    if request.method == 'GET':
+        followed_users=[]
+        for link in UserFollows.objects.filter(user=request.user):
+            followed_users.append(link.followed_user)
+        followers=[]
+        for link in UserFollows.objects.filter(followed_user=request.user):
+            followers.append(link.user)
+        context = {'followed_users': followed_users, 'followers': followers}
+        return render(request, 'follow.html', context)
+    elif request.method == 'POST':
+        new_followed_user = User.objects.filter(username=request.POST['new_followed_user'])[0]
+        if new_followed_user:
+            UserFollows.objects.create(user=request.user, followed_user=new_followed_user)
+        return redirect('follow')
 
 
 @login_required(login_url='home')

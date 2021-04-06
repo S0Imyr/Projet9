@@ -6,22 +6,35 @@
 <div class="content">
     <div class="follow">
         <h2>Suivre d'autres utilisateurs</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Nom d'utilisateur" name="new_followed_user">
+            <input type="submit" name="new_followed">
+        </form>
     </div>
     <div class="followed">
         <h2>Abonnements</h2>
+        {% if followed_users %}
         <table>
-            <tr><td>--Utilisateur1--</td><td><button>Se désabonner</button></td></tr>
-            <tr><td>--Utilisateur2--</td><td><button>Se désabonner</button></td></tr>
-            <tr><td>--Utilisateur3--</td><td><button>Se désabonner</button></td></tr>
+            {% for followed_user in followed_users %} 
+                <tr><td> {{ followed_user }} </td><td><button>Se désabonner</button></td></tr>
+            {% endfor %}
         </table>
+        {% else %}
+            <p>Aucun utilisateur suivi</p>
+        {% endif %}
     </div>
     <div class="followers">
         <h2>Abonnés</h2>
+        {% if followers %}
         <table>
-            <tr><td>--Utilisateur1--</td></tr>
-            <tr><td>--Utilisateur2--</td></tr>
-            <tr><td>--Utilisateur3--</td></tr>
+            {% for follower in followers %} 
+                <tr><td> {{ follower }} </td></tr>
+            {% endfor %}
         </table>
+        {% else %}
+            <p>Aucun abonné</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
