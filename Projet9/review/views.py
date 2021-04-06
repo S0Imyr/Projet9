@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import CharField, Value
+from django.contrib.auth.decorators import login_required
 
 from itertools import chain
 
@@ -15,6 +16,7 @@ def get_users_viewable_reviews(user):
     return Review.objects.all()
 
 
+@login_required(login_url='home')
 def flux(request):
     tickets = get_users_viewable_tickets(request.user)
     tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
@@ -27,6 +29,7 @@ def flux(request):
     return render(request, 'flux.html', context)
 
 
+@login_required(login_url='home')
 def create_ticket(request, id_ticket=None):
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
@@ -42,6 +45,7 @@ def create_ticket(request, id_ticket=None):
             return redirect('flux')
 
 
+@login_required(login_url='home')
 def create_review(request, id_review=None, id_ticket=None):
     review = None
     context = {}
@@ -64,6 +68,7 @@ def create_review(request, id_review=None, id_ticket=None):
             return redirect('flux')
 
 
+@login_required(login_url='home')
 def create_ticketreview(request):
     if request.method == 'GET':
         ticketform = TicketForm()
@@ -79,11 +84,13 @@ def create_ticketreview(request):
                 return redirect('flux')
 
 
+@login_required(login_url='home')
 def follow(request):
     context = {}
     return render(request, 'follow.html', context)
 
 
+@login_required(login_url='home')
 def posts(request):
     tickets = Ticket.objects.filter(user=request.user)
     tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
