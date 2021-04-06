@@ -86,11 +86,33 @@ def create_ticket(request, id_ticket=None):
 
 
 @login_required(login_url='home')
-def create_review(request, id_review=None, id_ticket=None):
+def modify_ticket(request, id_ticket):
+    context = {}
+    ticket = Ticket.objects.get(pk=id_ticket)
+    if request.method == 'GET':
+        if ticket is None:
+            pass
+        else:
+            form = TicketForm(instance=ticket)
+            context['form'] = form
+        return render(request, 'addticket.html', context)
+    elif request.method == 'POST':
+        form = TicketForm(request.POST, instance=ticket)
+        if form.is_valid():
+            form.save()
+            return redirect('posts')
+
+@login_required(login_url='home')
+def delete_ticket(request, id_ticket):
+    ticket = Ticket.objects.filter(pk=id_ticket)
+    ticket.delete()
+    return redirect('posts')
+
+
+@login_required(login_url='home')
+def create_review(request, id_ticket=None):
     review = None
     context = {}
-    if id_review is not None:
-        review = Review.objects.get(pk=id_review)
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
         ticket.answered = True
@@ -107,6 +129,31 @@ def create_review(request, id_review=None, id_ticket=None):
         if form.is_valid():
             article = form.save()
             return redirect('flux')
+
+
+@login_required(login_url='home')
+def modify_review(request, id_review):
+    context = {}
+    review = Review.objects.get(pk=id_review)
+    if request.method == 'GET':
+        if review is None:
+            pass
+        else:
+            form = ReviewForm(instance=review)
+            context['form'] = form
+        return render(request, 'addreview.html', context)
+    elif request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('posts')
+
+@login_required(login_url='home')
+def delete_review(request, id_review):
+    review = Review.objects.filter(pk=id_review)
+    review.ticket.answered = False
+    review.delete()
+    return redirect('posts')
 
 
 @login_required(login_url='home')

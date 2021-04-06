@@ -5,11 +5,15 @@
 </header>
 <div class="content">
     {% for post in posts %}
-    {% if post.type == 'TICKET' %}
-        {% include 'ticket.html' %}
-    {% elif post.type == 'REVIEW' %}
-        {% include 'review.html' %}
-    {% endif %}
-{% endfor %}
+        {% if post.type == 'TICKET' %}
+            {% include 'ticket.html' %}
+            <a href='{% url "modifyticket" id_ticket=post.content.id %}'><button>Modifier</button></a>
+            <a href='{% url "deleteticket" id_ticket=post.content.id %}'><button>Supprimer</button></a>
+        {% elif post.type == 'REVIEW' %}
+            {% include 'review.html' %}
+            <a href='{% url "modifyreview" id_review=post.content.id %}'><button>Modifier</button></a>
+            <a href='{% url "deletereview" id_review=post.content.id %}'><button>Supprimer</button></a>
+        {% endif %}
+    {% endfor %}
 </div>
 {% endblock %}

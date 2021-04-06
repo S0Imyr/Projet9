@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
     <div class="form-box">
-    <form method="POST" action="{% url 'addticket' %}">
+    <form method="POST" action="">
         {% csrf_token %}
         <div class="title">
             <div class="title__label"> {{ form.title.label }} </div>

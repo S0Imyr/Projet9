@@ -8,7 +8,7 @@
         {% include 'ticket.html' %}
     </div>
     <div>
-        <form method="POST" action="{% url 'addreview' %}">
+        <form method="POST" action="">
             {% csrf_token %}
             <div class="rating">
                 <div class="rating__label"> {{ form.rating.label }} </div>
