@@ -1,0 +1,47 @@
+.flux {
+    max-width: 1084px;
+    margin: auto;
+    border: solid 3px;
+    padding: 2%;
+}
+
+.ticket-details {
+    border: 2px green solid;
+    padding: 10px;
+    margin-top: 5px;
+    .ticket-details__user{
+        color: red;
+    }
+    .ticket-details__time-created{
+        color: blue;
+    }
+    .ticket-details__title{
+        color: violet;
+    }
+    .ticket-details__body{
+        color: orange;
+    }
+    .ticket-details__image{
+        color: green;
+    }
+}
+
+.review-details {
+    border: 2px blue solid;
+    padding: 10px;
+    .review-details__user{
+        color: red;
+    }
+    .review-details__time-created{
+        color: blue;
+    }
+    .review-details__headline{
+        color: violet;
+    }
+    .review-details__rating{
+        color: orange;
+    }
+    .review-details__body{
+        color: green;
+    }
+}

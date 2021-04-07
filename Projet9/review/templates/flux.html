@@ -1,4 +1,8 @@
 {% extends 'main.html' %}
+{% load static %}
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
+{% endblock %}
 {% block content %}
     <div class="buttons">
         <a href="{% url 'addticket' %}"><button>Demander une critique</button></a>
@@ -13,6 +17,5 @@
             {% endif %}
         {% endfor %}
         <button>Voir plus</button>
-
     </div>
 {% endblock %}

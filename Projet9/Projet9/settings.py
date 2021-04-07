@@ -69,6 +69,11 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+]
+
 WSGI_APPLICATION = 'Projet9.wsgi.application'
 
 
