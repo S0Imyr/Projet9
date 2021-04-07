@@ -1,3 +1,18 @@
+/*---- Base ----*/
+$color1: #f9fbfc;
+$color2: #203961;
+$color3: #a2cdb8;
+$color4: #e1755e;
+$color5: #5d554b;
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1084px;
+    margin: auto;
+    border: dotted 2px;
+    padding: 2%;
+}
 .flux {
     max-width: 1084px;
     margin: auto;

@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css'%}">
     {% block addcss %}
+        
     {% endblock %}
     <title>LIT Review</title>
 </head>
 <body>
-    <h1>LIT Review</h1>
+    <header>
+    <img src="{% static 'images/Logo.png'%}" alt="Logo LIT Review" class="img">
     {%  include 'navbar.html' %}
+    </header>
     {% block content %}
-
     {% endblock %}
 </body>
 </html>

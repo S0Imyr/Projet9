@@ -1,3 +1,12 @@
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1084px;
+  margin: auto;
+  border: dotted 2px;
+  padding: 2%;
+}
+
 .flux {
   max-width: 1084px;
   margin: auto;
