@@ -45,3 +45,10 @@ header{
         grid-row: 2 / span 1;
     }
 }
+
+.button {
+    color:$color1;
+    background-color: $color4;
+    margin:1%;
+    border-radius: 15px;
+}

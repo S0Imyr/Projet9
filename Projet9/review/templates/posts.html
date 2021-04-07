@@ -1,18 +1,22 @@
 {% extends 'main.html' %}
+{% load static %}
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
+{% endblock %}
 {% block content %}
-<header>
-    <h1>Mes posts</h1>
-</header>
-<div class="content">
+
+<h1 class="flux-header">Mes posts</h1>
+
+<div class="flux">
     {% for post in posts %}
         {% if post.type == 'TICKET' %}
             {% include 'ticket.html' %}
-            <a href='{% url "modifyticket" id_ticket=post.content.id %}'><button>Modifier</button></a>
-            <a href='{% url "deleteticket" id_ticket=post.content.id %}'><button>Supprimer</button></a>
+            <a href='{% url "modifyticket" id_ticket=post.content.id %}'><button class="button">Modifier</button></a>
+            <a href='{% url "deleteticket" id_ticket=post.content.id %}'><button class="button">Supprimer</button></a>
         {% elif post.type == 'REVIEW' %}
             {% include 'review.html' %}
-            <a href='{% url "modifyreview" id_review=post.content.id %}'><button>Modifier</button></a>
-            <a href='{% url "deletereview" id_review=post.content.id %}'><button>Supprimer</button></a>
+            <a href='{% url "modifyreview" id_review=post.content.id %}'><button class="button">Modifier</button></a>
+            <a href='{% url "deletereview" id_review=post.content.id %}'><button class="button">Supprimer</button></a>
         {% endif %}
     {% endfor %}
 </div>

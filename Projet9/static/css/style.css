@@ -38,4 +38,11 @@ header .logout {
   grid-row: 2/span 1;
 }
 
+.button {
+  color: #f9fbfc;
+  background-color: #e1755e;
+  margin: 1%;
+  border-radius: 15px;
+}
+
 /*# sourceMappingURL=style.css.map */

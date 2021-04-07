@@ -1,3 +1,10 @@
+/*---- Base ----*/
+.flux-header {
+  max-width: 1084px;
+  margin: auto;
+  padding: 2%;
+}
+
 .buttons {
   display: flex;
   justify-content: space-around;
