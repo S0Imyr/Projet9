@@ -1,0 +1,69 @@
+$color1: #f9fbfc;
+$color2: #203961;
+$color3: #a2cdb8;
+$color4: #e1755e;
+$color5: #5d554b;
+
+
+.flux{
+    font-family: 'Fjalla One', sans-serif;
+    max-width: 375px;
+    margin: auto;
+    padding: 2%;
+    background-color: $color2;
+    border:$color3 5px solid;
+    border-radius: 5px;
+    color:$color3;
+    h1 {
+        text-align: center;
+        margin: auto;
+        padding: 2%;
+        margin-bottom: 15px;
+    }
+    form{
+        .entry {
+            margin: auto;
+            padding: 10px;
+            width: 230px;
+            .entry__label {
+                padding: 5px;
+            }
+            .entry__input {
+                padding: 5px;
+                input{
+                    width: 220px;
+                }
+            }
+        }
+    }
+    .errors {
+        color:$color5;
+        background-color: $color4;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .return {
+        color:$color5;
+        background-color: $color3;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    a{
+        text-decoration: none;
+    }
+    input {
+        font-family: 'Fjalla One', sans-serif;
+    }
+}
+
+.button {
+    display: block;
+    color:$color1;
+    background-color: $color4;
+    margin: auto;
+    border-radius: 15px;
+    padding: 10px;
+}
+

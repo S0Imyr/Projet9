@@ -1,15 +1,17 @@
 {% extends 'main.html' %}
+{% load static %}
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
+{% endblock %}
 {% block content %}
-<header>
-    <h1>Mes abonnements</h1>
-</header>
-<div class="content">
+<h1 class="flux-header" >Mes abonnements</h1>
+<div class="flux">
     <div class="follow">
         <h2>Suivre d'autres utilisateurs</h2>
         <form method="POST">
             {% csrf_token %}
             <input type="text" placeholder="Nom d'utilisateur" name="new_followed_user">
-            <input type="submit" name="new_followed">
+            <input type="submit" name="new_followed" class='button'>
         </form>
     </div>
     <div class="followed">
@@ -17,7 +19,7 @@
         {% if followed_users %}
         <table>
             {% for followed_user in followed_users %} 
-                <tr><td> {{ followed_user }} </td><td><button>Se désabonner</button></td></tr>
+                <tr><td> {{ followed_user }} </td><td><button class='button'>Se désabonner</button></td></tr>
             {% endfor %}
         </table>
         {% else %}

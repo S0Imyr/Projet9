@@ -1,0 +1,61 @@
+.flux {
+  font-family: "Fjalla One", sans-serif;
+  max-width: 375px;
+  margin: auto;
+  padding: 2%;
+  background-color: #203961;
+  border: #a2cdb8 5px solid;
+  border-radius: 5px;
+  color: #a2cdb8;
+}
+.flux h1 {
+  text-align: center;
+  margin: auto;
+  padding: 2%;
+  margin-bottom: 15px;
+}
+.flux form .entry {
+  margin: auto;
+  padding: 10px;
+  width: 230px;
+}
+.flux form .entry .entry__label {
+  padding: 5px;
+}
+.flux form .entry .entry__input {
+  padding: 5px;
+}
+.flux form .entry .entry__input input {
+  width: 220px;
+}
+.flux .errors {
+  color: #5d554b;
+  background-color: #e1755e;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+.flux .return {
+  color: #5d554b;
+  background-color: #a2cdb8;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+.flux a {
+  text-decoration: none;
+}
+.flux input {
+  font-family: "Fjalla One", sans-serif;
+}
+
+.button {
+  display: block;
+  color: #f9fbfc;
+  background-color: #e1755e;
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

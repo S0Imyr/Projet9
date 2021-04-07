@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIT Review</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'authentification/css/style.css'%}">
+        <title>LIT Review</title>
+    </head>
     <body>
-    <h1>Inscription</h1>
-    <div class="creation-box">
-        <form method="POST" action="">
-            {% csrf_token %}
-            <div class="username">
-                <div class="username__label"> {{ form.username.label }} </div>
-                <div class="username__input"> {{ form.username }} </div>
+        <div class="flux">
+            <h1>Inscription</h1>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="entry">
+                    <div class="entry__label"> {{ form.username.label }} </div>
+                    <div class="entry__input"> {{ form.username }} </div>
+                </div>
+                <div class="entry">
+                    <div class="entry__label">{{ form.password1.label }}</div>
+                    <div class="entry__input"> {{ form.password1 }} </div>
+                </div>
+                    
+                <div class="entry">
+                    <div class="entry__label"> {{ form.password2.label }} </div>
+                    <div class="entry__input"> {{ form.password2 }} </div>
+                </div>
+                <input type="submit" name="Create User" class="button">
+            </form>
+            {% if form.errors %}
+            <div class="errors">
+                {{ form.errors.username }}
+                {{ form.errors.password1 }}
+                {{ form.errors.password2 }}
             </div>
-            <div class="password1">
-                <div class="password1__label"> {{ form.password1.label }} </div>
-                <div class="password1__input"> {{ form.password1 }} </div>
+            {% endif %}
+            <div class="return">
+                <p> Vous avez déjà un compte :</p>
+                <a href="{% url 'home' %}" ><button class='button'>Connectez vous</button></a>
             </div>
-                
-            <div class="password2">
-                <div class="password2__label"> {{ form.password2.label }} </div>
-                <div class="password2__input"> {{ form.password2 }} </div>
-            </div>
-            <input type="submit" name="Create User">
-        </form>
-        {{ form.errors }}
-        <p> Vous avez déjà un compte : <a href="{% url 'home' %}" >Connectez vous</a></p>
-    </div>
-</body>
+        </div>
+    </body>
 </html>

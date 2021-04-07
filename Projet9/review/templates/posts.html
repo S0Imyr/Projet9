@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
 {% endblock %}
 {% block content %}
-
 <h1 class="flux-header">Mes posts</h1>
-
 <div class="flux">
     {% for post in posts %}
         {% if post.type == 'TICKET' %}
