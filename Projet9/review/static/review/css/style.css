@@ -1,4 +1,9 @@
 /*---- Base ----*/
+body {
+  font-family: "Fjalla One", "Helvetica", sans-serif;
+  background-color: #f9fbfc;
+}
+
 .flux-header {
   max-width: 1084px;
   margin: auto;
@@ -10,19 +15,21 @@
   justify-content: space-around;
   max-width: 1084px;
   margin: auto;
-  border: dotted 2px;
-  padding: 2%;
+  border-top: #a2cdb8 solid 2px;
+  border-bottom: #a2cdb8 solid 2px;
+  padding: 10px 2% 10px 2%;
 }
 
 .flux {
   max-width: 1084px;
   margin: auto;
-  border: solid 3px;
   padding: 2%;
+  background-color: #f9fbfc;
+  opacity: 0.8;
 }
 
 .ticket-details {
-  border: 2px green solid;
+  background-color: #e1755e;
   padding: 10px;
   margin-top: 5px;
 }
@@ -43,7 +50,7 @@
 }
 
 .review-details {
-  border: 2px blue solid;
+  background-color: #a2cdb8;
   padding: 10px;
 }
 .review-details .review-details__user {

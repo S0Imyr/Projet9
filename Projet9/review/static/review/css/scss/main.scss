@@ -7,6 +7,7 @@ $color5: #5d554b;
 
 body {
     font-family: 'Fjalla One', 'Helvetica',sans-serif;
+    background-color: $color1;
 }
 
 .flux-header{
@@ -20,18 +21,20 @@ body {
     justify-content: space-around;
     max-width: 1084px;
     margin: auto;
-    border: dotted 2px;
-    padding: 2%;
+    border-top: $color3 solid 2px;
+    border-bottom: $color3 solid 2px;
+    padding: 10px 2% 10px 2%;
 }
 .flux {
     max-width: 1084px;
     margin: auto;
-    border: solid 3px;
     padding: 2%;
+    background-color: $color1 ;
+    opacity: 0.8;
 }
 
 .ticket-details {
-    border: 2px green solid;
+    background-color: $color4;
     padding: 10px;
     margin-top: 5px;
     .ticket-details__user{
@@ -52,7 +55,7 @@ body {
 }
 
 .review-details {
-    border: 2px blue solid;
+    background-color: $color3;
     padding: 10px;
     .review-details__user{
         color: red;

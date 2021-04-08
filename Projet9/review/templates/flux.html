@@ -5,8 +5,8 @@
 {% endblock %}
 {% block content %}
     <div class="buttons">
-        <a href="{% url 'addticket' %}"><button>Demander une critique</button></a>
-        <a href=""><button>Créer une critique</button></a>
+        <a href="{% url 'addticket' %}"><button class="button2">Demander une critique</button></a>
+        <a href=""><button class="button2">Créer une critique</button></a>
     </div>
     <div class='flux'>
         {% for post in posts %}
@@ -16,6 +16,5 @@
                 {% include 'review.html' %}
             {% endif %}
         {% endfor %}
-        <button>Voir plus</button>
     </div>
 {% endblock %}

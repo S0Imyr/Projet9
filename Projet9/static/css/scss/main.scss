@@ -12,11 +12,12 @@ body {
 
 header{
     max-width: 1084px;
-    height: 70px;
+    height: 100px;
     margin:auto;
     display: grid;
-    background-color: $color2;
-    color:$color3;
+    background-color: $color1;
+    color: $color2;
+    font-weight: bold;
     padding-left: 2%;
     padding-right: 2%;
     grid-template: 40% 20% 40% / 10% 60% 15% 15%;
@@ -37,10 +38,6 @@ header{
             padding-left:0;
             li {
                 text-align: center;
-                a {
-                    text-decoration:none; 
-                    color:$color3;
-                }
             }
         }
     }
@@ -55,8 +52,25 @@ header{
 }
 
 .button {
+    display: block;
     color:$color1;
     background-color: $color4;
-    margin:1%;
+    margin: auto;
     border-radius: 15px;
+    padding: 10px;
+}
+
+.button2 {
+    display: block;
+    border: $color2;
+    color:$color1;
+    background-color: $color3;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+}
+
+a {
+    text-decoration:none; 
+    color: $color2;
 }
