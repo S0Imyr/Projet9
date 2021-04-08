@@ -10,34 +10,36 @@
     </head>
     <body>
         <div class="flux">
-            <h1>Inscription</h1>
-            <form method="POST" action="">
-                {% csrf_token %}
-                <div class="entry">
-                    <div class="entry__label"> {{ form.username.label }} </div>
-                    <div class="entry__input"> {{ form.username }} </div>
+            <div class="createaccount">
+                <h1>Inscription</h1>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="entry">
+                        <div class="entry__label"> {{ form.username.label }} </div>
+                        <div class="entry__input"> {{ form.username }} </div>
+                    </div>
+                    <div class="entry">
+                        <div class="entry__label">{{ form.password1.label }}</div>
+                        <div class="entry__input"> {{ form.password1 }} </div>
+                    </div>
+                        
+                    <div class="entry">
+                        <div class="entry__label"> {{ form.password2.label }} </div>
+                        <div class="entry__input"> {{ form.password2 }} </div>
+                    </div>
+                    <input type="submit" name="Create User" class="button">
+                </form>
+                {% if form.errors %}
+                <div class="errors">
+                    {{ form.errors.username }}
+                    {{ form.errors.password1 }}
+                    {{ form.errors.password2 }}
                 </div>
-                <div class="entry">
-                    <div class="entry__label">{{ form.password1.label }}</div>
-                    <div class="entry__input"> {{ form.password1 }} </div>
+                {% endif %}
+                <div class="return">
+                    <p> Vous avez déjà un compte :</p>
+                    <a href="{% url 'home' %}" ><button class='button'>Connectez vous</button></a>
                 </div>
-                    
-                <div class="entry">
-                    <div class="entry__label"> {{ form.password2.label }} </div>
-                    <div class="entry__input"> {{ form.password2 }} </div>
-                </div>
-                <input type="submit" name="Create User" class="button">
-            </form>
-            {% if form.errors %}
-            <div class="errors">
-                {{ form.errors.username }}
-                {{ form.errors.password1 }}
-                {{ form.errors.password2 }}
-            </div>
-            {% endif %}
-            <div class="return">
-                <p> Vous avez déjà un compte :</p>
-                <a href="{% url 'home' %}" ><button class='button'>Connectez vous</button></a>
             </div>
         </div>
     </body>

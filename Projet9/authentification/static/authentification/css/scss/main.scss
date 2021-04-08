@@ -6,55 +6,65 @@ $color5: #5d554b;
 
 
 .flux{
-    font-family: 'Fjalla One', sans-serif;
-    max-width: 375px;
-    margin: auto;
-    padding: 2%;
-    background-color: $color2;
-    border:$color3 5px solid;
-    border-radius: 5px;
-    color:$color3;
-    h1 {
-        text-align: center;
+    display: flex;
+    flex-direction: row;
+    .createaccount .login-box {
+        background-color: $color2;
+        border:$color3 5px solid;
+    }
+    .register {
+        background-color: $color3;
+        border:$color2 5px solid;
+    }
+    .createaccount .login-box .register {
+        font-family: 'Fjalla One', sans-serif;
+        max-width: 375px;
         margin: auto;
         padding: 2%;
-        margin-bottom: 15px;
-    }
-    form{
-        .entry {
+        border-radius: 5px;
+        color:$color3;
+        h1 {
+            text-align: center;
             margin: auto;
-            padding: 10px;
-            width: 230px;
-            .entry__label {
-                padding: 5px;
-            }
-            .entry__input {
-                padding: 5px;
-                input{
-                    width: 220px;
+            padding: 2%;
+            margin-bottom: 15px;
+        }
+        form{
+            .entry {
+                margin: auto;
+                padding: 10px;
+                width: 230px;
+                .entry__label {
+                    padding: 5px;
+                }
+                .entry__input {
+                    padding: 5px;
+                    input{
+                        width: 220px;
+                    }
                 }
             }
         }
-    }
-    .errors {
-        color:$color5;
-        background-color: $color4;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-    }
-    .return {
-        color:$color5;
-        background-color: $color3;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-    }
-    a{
-        text-decoration: none;
-    }
-    input {
-        font-family: 'Fjalla One', sans-serif;
+        .errors {
+            color:$color5;
+            background-color: $color4;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .return {
+            color:$color5;
+            background-color: $color3;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        input {
+            font-family: 'Fjalla One', sans-serif;
+        }
     }
 }
 
@@ -66,4 +76,5 @@ $color5: #5d554b;
     border-radius: 15px;
     padding: 10px;
 }
+    
 
