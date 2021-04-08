@@ -1,61 +1,69 @@
+body {
+  font-family: "Fjalla One", "Helvetica", sans-serif;
+}
+
 .flux {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
-.flux .createaccount .login-box {
+.flux .createaccount, .flux .login-box {
   background-color: #203961;
+  color: #a2cdb8;
   border: #a2cdb8 5px solid;
 }
 .flux .register {
   background-color: #a2cdb8;
+  color: #203961;
   border: #203961 5px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.flux .createaccount .login-box .register {
-  font-family: "Fjalla One", sans-serif;
-  max-width: 375px;
-  margin: auto;
+.flux .createaccount, .flux .login-box, .flux .register {
+  width: 300px;
   padding: 2%;
   border-radius: 5px;
-  color: #a2cdb8;
 }
-.flux .createaccount .login-box .register h1 {
+.flux .createaccount h1, .flux .login-box h1, .flux .register h1 {
   text-align: center;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 2%;
   margin-bottom: 15px;
 }
-.flux .createaccount .login-box .register form .entry {
+.flux .createaccount form .entry, .flux .login-box form .entry, .flux .register form .entry {
   margin: auto;
   padding: 10px;
   width: 230px;
 }
-.flux .createaccount .login-box .register form .entry .entry__label {
+.flux .createaccount form .entry .entry__label, .flux .login-box form .entry .entry__label, .flux .register form .entry .entry__label {
   padding: 5px;
 }
-.flux .createaccount .login-box .register form .entry .entry__input {
+.flux .createaccount form .entry .entry__input, .flux .login-box form .entry .entry__input, .flux .register form .entry .entry__input {
   padding: 5px;
 }
-.flux .createaccount .login-box .register form .entry .entry__input input {
+.flux .createaccount form .entry .entry__input input, .flux .login-box form .entry .entry__input input, .flux .register form .entry .entry__input input {
   width: 220px;
 }
-.flux .createaccount .login-box .register .errors {
+.flux .createaccount .errors, .flux .login-box .errors, .flux .register .errors {
   color: #5d554b;
   background-color: #e1755e;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
 }
-.flux .createaccount .login-box .register .return {
+.flux .createaccount .return, .flux .login-box .return, .flux .register .return {
   color: #5d554b;
   background-color: #a2cdb8;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
 }
-.flux .createaccount .login-box .register a {
+.flux .createaccount a, .flux .login-box a, .flux .register a {
   text-decoration: none;
 }
-.flux .createaccount .login-box .register input {
+.flux .createaccount input, .flux .login-box input, .flux .register input {
   font-family: "Fjalla One", sans-serif;
 }
 

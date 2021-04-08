@@ -4,28 +4,36 @@ $color3: #a2cdb8;
 $color4: #e1755e;
 $color5: #5d554b;
 
+body {
+    font-family: 'Fjalla One', 'Helvetica',sans-serif;
+}
 
 .flux{
     display: flex;
     flex-direction: row;
-    .createaccount .login-box {
+    justify-content: center;
+    .createaccount, .login-box {
         background-color: $color2;
+        color:$color3;
         border:$color3 5px solid;
     }
     .register {
         background-color: $color3;
+        color:$color2;
         border:$color2 5px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
     }
-    .createaccount .login-box .register {
-        font-family: 'Fjalla One', sans-serif;
-        max-width: 375px;
-        margin: auto;
+    .createaccount, .login-box, .register {
+        width: 300px;
         padding: 2%;
         border-radius: 5px;
-        color:$color3;
         h1 {
             text-align: center;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
             padding: 2%;
             margin-bottom: 15px;
         }
