@@ -7,29 +7,18 @@
         {% endif %}
     </div> 
     <div class='review-details__time-created'>
-        {{ post.content.time_created }}
+        <p>{{ post.content.time_created }}</p>
     </div>
     <div class='review-details__headline'>
-        {{ post.content.headline }}
+        <h2>{{ post.content.headline }}</h2>
     </div>
     <div class='review-details__rating'>
-        {{ post.content.rating }}
+        <p>{{ post.content.rating }}</p>
     </div>
     <div class='review-details__body'>
-        {{ post.content.body }}
+        <p>{{ post.content.body }}</p>
     </div>
     <div class='review-details__ticket'>
-        <div class='review-details__ticket__user'>
-            {{ post.content.ticket.user }}
-        </div> 
-        <div class='review-details__ticket__title'>
-            {{ post.content.ticket.title }}
-        </div>
-        <div class='review-details__ticket__body'>
-            {{ post.content.ticket.body }}
-        </div>
-        <div class='review-details__ticket__image'>
-            {{ post.content.ticket.image }}
-        </div>
+
     </div>
 </div>

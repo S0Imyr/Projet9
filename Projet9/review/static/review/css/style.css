@@ -29,44 +29,124 @@ body {
 }
 
 .ticket-details {
-  background-color: #e1755e;
+  margin: 20px;
+  min-height: 300px;
+  border: #e1755e solid 2px;
   padding: 10px;
-  margin-top: 5px;
+  display: grid;
+  grid-template: 20% 20% 60%/15% 55% 30%;
 }
 .ticket-details .ticket-details__user {
-  color: red;
+  font-size: 12px;
+  padding: 5px;
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+  background-color: #203961;
+  color: #a2cdb8;
+}
+.ticket-details .ticket-details__user p {
+  text-align: center;
 }
 .ticket-details .ticket-details__time-created {
-  color: blue;
+  font-size: 12px;
+  padding: 5px;
+  grid-column: 3/span 1;
+  grid-row: 2/span 1;
+  background-color: #203961;
+  color: #a2cdb8;
+}
+.ticket-details .ticket-details__time-created p {
+  text-align: center;
+}
+.ticket-details .ticket-details__button {
+  background-color: #a2cdb8;
+  color: #f9fbfc;
+  grid-column: 3/span 1;
+  grid-row: 3/span 1;
+  display: grid;
+  grid-row: 40% 20% 40%;
+}
+.ticket-details .ticket-details__button a {
+  grid-row: 2/span 1;
 }
 .ticket-details .ticket-details__title {
-  color: violet;
+  padding: 15px;
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+  background-color: #203961;
+  color: #a2cdb8;
+}
+.ticket-details .ticket-details__title h2 {
+  text-align: center;
 }
 .ticket-details .ticket-details__body {
-  color: orange;
+  padding: 15px;
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  background-color: #a2cdb8;
+  color: #203961;
 }
 .ticket-details .ticket-details__image {
-  color: green;
+  background-color: #a2cdb8;
+  color: #203961;
+  grid-column: 1/span 1;
+  grid-row: 3/span 2;
+}
+.ticket-details .ticket-details__image img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .review-details {
-  background-color: #a2cdb8;
-  padding: 10px;
+  margin: 20px;
+  min-height: 300px;
+  display: grid;
+  border: #a2cdb8 solid 2px;
+  padding: 20px;
+  grid-template: 15% 15% 70%/40% 30% 30%;
 }
 .review-details .review-details__user {
-  color: red;
+  font-size: 12px;
+  padding: 5px;
+  background-color: #5d554b;
+  color: #e1755e;
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+}
+.review-details .review-details__user p {
+  text-align: center;
 }
 .review-details .review-details__time-created {
-  color: blue;
+  font-size: 12px;
+  padding: 5px;
+  background-color: #5d554b;
+  color: #e1755e;
+  grid-column: 3/span 1;
+  grid-row: 2/span 1;
+}
+.review-details .review-details__time-created p {
+  text-align: center;
 }
 .review-details .review-details__headline {
-  color: violet;
+  background-color: #5d554b;
+  color: #e1755e;
+  padding: 15px;
+  grid-column: 1/span 1;
+  grid-row: 1/span 2;
 }
 .review-details .review-details__rating {
-  color: orange;
+  background-color: #5d554b;
+  color: #e1755e;
+  padding: 15px;
+  grid-column: 2/span 1;
+  grid-row: 1/span 2;
 }
 .review-details .review-details__body {
-  color: green;
+  background-color: #e1755e;
+  color: #5d554b;
+  padding: 15px;
+  grid-column: 1/span 2;
+  grid-row: 3/span 1;
 }
 
 /*# sourceMappingURL=style.css.map */

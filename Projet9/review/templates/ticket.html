@@ -1,3 +1,4 @@
+{% load static %}
 <div class='ticket-details'>
     <div class='ticket-details__user'>
         {% if post.content.user == request.user %}
@@ -6,19 +7,25 @@
             <p>{{ post.content.user }} a demandé une critique :</p>
         {% endif %}
     </div>
-    <div class='ticket-details__time-created'>
-        {{ post.content.time_created }}
+    <div class="ticket-details__time-created">
+        <p>le {{ post.content.time_created }}</p>
+    </div>
+    <div class="ticket-details__button">
+        {% if not post.content.answered and post.content.id %}
+            <a href='{% url "addreview" id_ticket=post.content.id %}'><button class="button">Créer une critique</button></a>
+        {% endif %}
     </div>
     <div class='ticket-details__title'>
-        {{ post.content.title }}
+        <h2>{{ post.content.title }}</h2>
     </div>
     <div class='ticket-details__body'>
-        {{ post.content.body }}
+        <p>{{ post.content.description }}</p>
     </div>
     <div class='ticket-details__image'>
-        {{ post.content.image }}
+        {% if not post.content.image %}
+            <img src="{% static 'images/livre.png'%}" alt="Livre commun" class="img">
+        {% else %}
+            <img src="{% static '{{ post.content.image }}'%}" alt="Livre commun" class="img">
+        {% endif %}
     </div>
-    {% if not post.content.answered and post.content.id %}
-        <a href='{% url "addreview" id_ticket=post.content.id %}'><button class="button">Créer une critique</button></a>
-    {% endif %}
 </div>
