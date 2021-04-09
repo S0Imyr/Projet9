@@ -7,20 +7,20 @@
     <div class="flux-header">
         <h1>Créer une critique</h1>
     </div>
-    <div>
-        <p>Vous êtes en train de poster en réponse à</p>
-        
-    </div>
-    <div>
+    <div class="flux">
+        <div>
+            <p>Vous êtes en train de poster en réponse à</p>
+        </div>
+        <div class="review-details">
         {{ form.errors }}
         <form method="POST" action="">
             {% csrf_token %}
             <div class="rating">
-                <input name="rating" id="id_rating" type="radio"></a><label for="e5">★</label>
-                <input name="rating" id="id_rating" type="radio"></a><label for="e4">★</label>
-                <input name="rating" id="id_rating" type="radio"></a><label for="e3">★</label>
-                <input name="rating" id="id_rating" type="radio"></a><label for="e2">★</label>
-                <input name="rating" id="id_rating" type="radio"></a><label for="e1">★</label>
+                <input name="rating" id="5" type="radio"></a><label for="5">★</label>
+                <input name="rating" id="4" type="radio"></a><label for="4">★</label>
+                <input name="rating" id="3" type="radio"></a><label for="3">★</label>
+                <input name="rating" id="2" type="radio"></a><label for="2">★</label>
+                <input name="rating" id="1" type="radio"></a><label for="1">★</label>
             </div>
             <div class="headline">
                 <div class="headline__label"> {{ form.headline.label }} </div>
@@ -40,5 +40,6 @@
             </div>
             <input type="submit"/>
         </form>
+        </div
     </div>
 {% endblock %}

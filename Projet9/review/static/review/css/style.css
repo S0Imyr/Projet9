@@ -4,6 +4,10 @@ body {
   background-color: #f9fbfc;
 }
 
+.None {
+  display: none;
+}
+
 .flux-header {
   color: #a2cdb8;
   margin: auto;
