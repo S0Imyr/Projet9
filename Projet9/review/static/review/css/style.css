@@ -5,19 +5,21 @@ body {
 }
 
 .flux-header {
-  max-width: 1084px;
+  color: #a2cdb8;
   margin: auto;
+  text-align: center;
+  max-width: 1084px;
   padding: 2%;
+  border-top: #a2cdb8 solid 2px;
+  border-bottom: #a2cdb8 solid 2px;
+}
+.flux-header h1, .flux-header a {
+  margin: auto;
 }
 
 .buttons {
   display: flex;
   justify-content: space-around;
-  max-width: 1084px;
-  margin: auto;
-  border-top: #a2cdb8 solid 2px;
-  border-bottom: #a2cdb8 solid 2px;
-  padding: 10px 2% 10px 2%;
 }
 
 .flux {
@@ -103,7 +105,7 @@ body {
   display: grid;
   border: #a2cdb8 solid 2px;
   padding: 20px;
-  grid-template: 15% 15% 70%/40% 30% 30%;
+  grid-template: 20% 20% 60%/40% 30% 30%;
 }
 .review-details .review-details__user {
   font-size: 12px;
@@ -147,6 +149,37 @@ body {
   padding: 15px;
   grid-column: 1/span 2;
   grid-row: 3/span 1;
+}
+
+.rating {
+  width: 226px;
+  margin: 0 auto 1em;
+  font-size: 45px;
+  overflow: hidden;
+}
+.rating input {
+  float: right;
+  opacity: 0;
+  position: absolute;
+}
+.rating a, .rating label {
+  float: right;
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a {
+  color: orange;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

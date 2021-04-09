@@ -1,19 +1,26 @@
 {% extends 'main.html' %}
+{% load static %}
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
+{% endblock %}
 {% block content %}
-    <header>
+    <div class="flux-header">
         <h1>Créer une critique</h1>
-    </header>
+    </div>
     <div>
         <p>Vous êtes en train de poster en réponse à</p>
-        {% include 'ticket.html' %}
+        
     </div>
     <div>
         {{ form.errors }}
         <form method="POST" action="">
             {% csrf_token %}
             <div class="rating">
-                <div class="rating__label"> {{ form.rating.label }} </div>
-                <div class="rating__input"> {{ form.rating }} </div>
+                <input name="rating" id="id_rating" type="radio"></a><label for="e5">★</label>
+                <input name="rating" id="id_rating" type="radio"></a><label for="e4">★</label>
+                <input name="rating" id="id_rating" type="radio"></a><label for="e3">★</label>
+                <input name="rating" id="id_rating" type="radio"></a><label for="e2">★</label>
+                <input name="rating" id="id_rating" type="radio"></a><label for="e1">★</label>
             </div>
             <div class="headline">
                 <div class="headline__label"> {{ form.headline.label }} </div>

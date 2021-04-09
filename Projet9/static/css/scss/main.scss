@@ -50,8 +50,7 @@ header{
         grid-row: 2 / span 1;
     }
 }
-
-.button {
+input.button {
     display: block;
     color:$color1;
     background-color: $color4;
@@ -60,14 +59,27 @@ header{
     padding: 10px;
 }
 
-.button2 {
+.button {
+    button {
     display: block;
-    border: $color2;
     color:$color1;
-    background-color: $color3;
-    font-weight: bold;
+    background-color: $color4;
     margin: auto;
+    border-radius: 15px;
     padding: 10px;
+    }
+}
+
+.button2 {
+    button {
+        display: block;
+        border: $color2;
+        color:$color1;
+        background-color: $color3;
+        font-weight: bold;
+        margin: auto;
+        padding: 10px;
+    }
 }
 
 a {

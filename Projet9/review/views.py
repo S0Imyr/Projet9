@@ -121,12 +121,17 @@ def create_review(request, id_ticket=None):
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:
         review = Review(ticket=None, rating=None, headline=None, body=None, user=request.user, time_created=None)
+
+
     if request.method == 'GET':
         form = ReviewForm(instance=review)
         context['form'] = form
         return render(request, 'addreview.html', context)
+
+
     elif request.method == 'POST':
         form = ReviewForm(request.POST)
+
         if form.is_valid():
             article = form.save()
             return redirect('flux')

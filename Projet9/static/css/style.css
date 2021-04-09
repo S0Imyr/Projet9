@@ -43,7 +43,7 @@ header .logout {
   grid-row: 2/span 1;
 }
 
-.button {
+input.button {
   display: block;
   color: #f9fbfc;
   background-color: #e1755e;
@@ -52,7 +52,16 @@ header .logout {
   padding: 10px;
 }
 
-.button2 {
+.button button {
+  display: block;
+  color: #f9fbfc;
+  background-color: #e1755e;
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.button2 button {
   display: block;
   border: #203961;
   color: #f9fbfc;

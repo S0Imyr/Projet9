@@ -11,19 +11,21 @@ body {
 }
 
 .flux-header{
-    max-width: 1084px;
+    color: $color3;
     margin: auto;
+    text-align: center;
+    max-width: 1084px;
     padding: 2%;
+    border-top: $color3 solid 2px;
+    border-bottom: $color3 solid 2px;
+    h1, a {
+        margin: auto;
+    }
 }
 
 .buttons {
     display: flex;
     justify-content: space-around;
-    max-width: 1084px;
-    margin: auto;
-    border-top: $color3 solid 2px;
-    border-bottom: $color3 solid 2px;
-    padding: 10px 2% 10px 2%;
 }
 .flux {
     max-width: 1084px;
@@ -108,7 +110,7 @@ body {
     display: grid;
     border: $color3 solid 2px;
     padding: 20px;
-    grid-template: 15% 15% 70% / 40% 30% 30%;
+    grid-template: 20% 20% 60% / 40% 30% 30%;
     .review-details__user{
         font-size: 12px;
         padding: 5px;
@@ -153,3 +155,39 @@ body {
         grid-row: 3 / span 1;
     }
 }
+
+
+
+.rating {
+    width: 226px;
+    margin: 0 auto 1em;
+    font-size: 45px;
+    overflow:hidden;
+    input {
+        float: right;
+        opacity: 0;
+        position: absolute;
+    }
+    a, label {
+        float:right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+    }
+
+    label:hover ~ label,
+    input:focus ~ label,
+    label:hover,
+    a:hover,
+    a:hover ~ a,
+    a:focus,
+    a:focus ~ a		{
+       color: orange;
+       cursor: pointer;
+   }
+}
+
+

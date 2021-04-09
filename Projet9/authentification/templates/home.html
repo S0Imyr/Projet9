@@ -26,7 +26,7 @@
                     <input type="submit" name="Log in" value="Se connecter" class='button'>
                 </form> 
             </div>
-            {% if errors %}
+            {% if messages %}
             <div class="errors">
             {% for message in messages %}
                 <p>{{ message }}</p>
@@ -37,7 +37,7 @@
         <div class="register">
             <h1>Inscrivez vous :</h1>
             <div>
-                <a href="{% url 'account' %}"><button class='button'>Créer votre compte</button> </a>
+                <a href="{% url 'account' %}" class='button'><button>Créer votre compte</button> </a>
             </div>
         </div>
     </div>

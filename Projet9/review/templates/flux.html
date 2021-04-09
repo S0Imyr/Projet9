@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
 {% endblock %}
 {% block content %}
-    <div class="buttons">
-        <a href="{% url 'addticket' %}"><button class="button2">Demander une critique</button></a>
-        <a href=""><button class="button2">Créer une critique</button></a>
+    <div class="buttons flux-header">
+        <a href="{% url 'addticket' %}" class="button2"><button>Demander une critique</button></a>
+        <a href="" class="button2"><button>Créer une critique</button></a>
     </div>
     <div class='flux'>
         {% for post in posts %}

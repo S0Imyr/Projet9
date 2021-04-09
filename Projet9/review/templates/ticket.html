@@ -12,7 +12,7 @@
     </div>
     <div class="ticket-details__button">
         {% if not post.content.answered and post.content.id %}
-            <a href='{% url "addreview" id_ticket=post.content.id %}'><button class="button">Créer une critique</button></a>
+            <a href='{% url "addreview" id_ticket=post.content.id %}' class="button"><button>Créer une critique</button></a>
         {% endif %}
     </div>
     <div class='ticket-details__title'>
@@ -22,10 +22,11 @@
         <p>{{ post.content.description }}</p>
     </div>
     <div class='ticket-details__image'>
+        <p>{{post.content.image}}</p>
         {% if not post.content.image %}
             <img src="{% static 'images/livre.png'%}" alt="Livre commun" class="img">
         {% else %}
-            <img src="{% static '{{ post.content.image }}'%}" alt="Livre commun" class="img">
+            <img src="{{ post.content.image }}" alt="Livre commun" class="img">
         {% endif %}
     </div>
 </div>
