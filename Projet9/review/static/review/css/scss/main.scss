@@ -195,3 +195,24 @@ body {
 }
 
 
+ /* forms */
+
+ .newform{
+    border: solid $color4;
+    padding: 10px;
+ }
+
+ .entry{
+    padding: 10px;
+    .entry__label{
+        color: $color2;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .entry__input{
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+        }
+    }
+ }

@@ -8,25 +8,25 @@
         <h1>Demander une critique</h1>
     </div>
     <div class="flux">
-    <form method="POST" action="">
-        {% csrf_token %}
-        <div class="title">
-            <div class="title__label"><p>Titre de l'oeuvre - Auteur: </p></div>
-            <div class="title__input"> {{ form.title }} </div>
-        </div>
-        <div class="description">
-            <div class="description__label"><p>{{ form.description.label }}: <p></div>
-            <div class="description__input"> {{ form.description }} </div>
-        </div>
-        <div class="image">
-            <div class="image__label"><p>{{ form.image.label }}</p></div>
-            <div class="image__input"> {{ form.image }} </div>
-        </div>
-        <div class="user">
-            <div class="user__label None"> {{ form.user.label }} </div>
-            <div class="user__input None"> {{ form.user }} </div>
-        </div>
-        <input type="submit" name="Create ticket">
-    </form>
+        <form method="POST" action="" class="newform">
+            {% csrf_token %}
+            <div class="entry">
+                <div class="entry__label"><p>Titre de l'oeuvre - Auteur : </p></div>
+                <div class="entry__input"> {{ form.title }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"><p>{{ form.description.label }}: <p></div>
+                <div class="entry__input"> {{ form.description }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"><p>{{ form.image.label }}</p></div>
+                <div class="entry__input"> {{ form.image }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label None"> {{ form.user.label }} </div>
+                <div class="entry__input None"> {{ form.user }} </div>
+            </div>
+            <input type="submit" class="button" name="Create ticket">
+        </form>
     </div>
 {% endblock %}

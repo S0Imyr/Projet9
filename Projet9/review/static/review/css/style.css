@@ -186,4 +186,23 @@ body {
   cursor: pointer;
 }
 
+/* forms */
+.newform {
+  border: solid #e1755e;
+  padding: 10px;
+}
+
+.entry {
+  padding: 10px;
+}
+.entry .entry__label {
+  color: #203961;
+  font-weight: bold;
+  padding: 10px;
+}
+.entry .entry__input input, .entry .entry__input textarea {
+  width: 90%;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
