@@ -11,35 +11,33 @@
         <div>
             <p>Vous êtes en train de poster en réponse à</p>
         </div>
-        <div class="review-details">
-        {{ form.errors }}
+        <div class="ticket">
+        </div>
         <form method="POST" action="">
             {% csrf_token %}
-            <div class="rating">
-                <input name="rating" id="5" type="radio"></a><label for="5">★</label>
-                <input name="rating" id="4" type="radio"></a><label for="4">★</label>
-                <input name="rating" id="3" type="radio"></a><label for="3">★</label>
-                <input name="rating" id="2" type="radio"></a><label for="2">★</label>
-                <input name="rating" id="1" type="radio"></a><label for="1">★</label>
+            <div class="entry">
+                <div class="entry__label"> {{ form.rating.label }} </div>
+                <div class="entry__input"> {{ form.rating }} </div>
             </div>
-            <div class="headline">
-                <div class="headline__label"> {{ form.headline.label }} </div>
-                <div class="headline__input"> {{ form.headline }} </div>
+            <div class="entry">
+                <div class="entry__label"> {{ form.headline.label }} </div>
+                <div class="entry__input"> {{ form.headline }} </div>
             </div>
-            <div class="body">
-                <div class="body__label"> {{ form.body.label }} </div>
-                <div class="body__input"> {{ form.body }} </div>
+            <div class="entry">
+                <div class="entry__label"> {{ form.body.label }} </div>
+                <div class="entry__input"> {{ form.body }} </div>
             </div>
-            <div class="ticket">
-                <div class="ticket__label"> {{ form.ticket.label }} </div>
-                <div class="ticket__input"> {{ form.ticket }} </div>
+            <div class="entry None">
+                <div class="entry__label"> {{ form.ticket.label }} </div>
+                <div class="entry__input"> {{ form.ticket }} </div>
             </div>
-            <div class="user">
-                <div class="user__label"> {{ form.user.label }} </div>
-                <div class="user__input"> {{ form.user }} </div>
+            <div class="entry None">
+                <div class="entry__label"> {{ form.user.label }} </div>
+                <div class="entry__input"> {{ form.user }} </div>
             </div>
-            <input type="submit"/>
+            <input type="submit" class="button"/>
         </form>
+        {{ form.errors }}
         </div
     </div>
 {% endblock %}
