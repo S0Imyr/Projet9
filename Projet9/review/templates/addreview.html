@@ -19,15 +19,15 @@
             <form method="POST" action="">
                 {% csrf_token %}
                 <div class="entry">
-                    <div class="entry__label"> {{ form.rating.label }} </div>
-                    <div class="entry__input"> {{ form.rating }} </div>
+                    <div class="entry__label"> Note </div>
+                    <div class="entry__radio-input"> {{ form.rating }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"> {{ form.headline.label }} </div>
+                    <div class="entry__label"> Titre de votre critique </div>
                     <div class="entry__input"> {{ form.headline }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"> {{ form.body.label }} </div>
+                    <div class="entry__label"> La critique </div>
                     <div class="entry__input"> {{ form.body }} </div>
                 </div>
                 <div class="entry None">
