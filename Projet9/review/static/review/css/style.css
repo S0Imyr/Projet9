@@ -189,8 +189,23 @@ body {
 /* forms */
 section {
   border: solid #e1755e;
-  padding: 10px;
+  padding: 30px;
   margin: 10px;
+}
+section h2 {
+  color: #203961;
+  padding-left: 30px;
+}
+section table {
+  width: 80%;
+  margin: auto;
+  font-size: 14px;
+  color: #5d554b;
+  font-weight: bold;
+  border-spacing: 5px;
+}
+section table td {
+  height: 20%;
 }
 
 .entry {
@@ -203,6 +218,17 @@ section {
 }
 .entry .entry__input input, .entry .entry__input textarea {
   width: 90%;
+  padding: 10px;
+}
+.entry .entry__input-button {
+  display: flex;
+}
+.entry .entry__input-button .input {
+  width: 60%;
+  padding: 10px;
+}
+.entry .entry__input-button .button {
+  margin: auto;
   padding: 10px;
 }
 

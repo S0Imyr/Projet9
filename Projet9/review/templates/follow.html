@@ -12,8 +12,12 @@
         <h2>Suivre d'autres utilisateurs</h2>
         <form method="POST">
             {% csrf_token %}
-            <input type="text" placeholder="Nom d'utilisateur" name="new_followed_user">
-            <input type="submit" name="new_followed" class='button'>
+            <div class="entry">
+                <div class="entry__input-button">
+                    <input type="text" placeholder="Nom d'utilisateur" name="new_followed_user" class="input">
+                    <input type="submit" name="new_followed" class='button'>
+                </div>
+            </div>
         </form>
     </section>
     <section>
