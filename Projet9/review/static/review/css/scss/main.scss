@@ -54,8 +54,11 @@ body {
         grid-row: 1 / span 1;
         background-color: $color2;
         color: $color3;
-        p {
-            text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        p{
+            margin: 2px;
         }
     }
     .ticket-details__time-created{
@@ -65,8 +68,11 @@ body {
         grid-row: 2 / span 1;
         background-color: $color2;
         color: $color3;
-        p {
-            text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        p{
+            margin: 2px;
         }
     }
     .ticket-details__button{
@@ -128,8 +134,11 @@ body {
         color: $color4;
         grid-column: 3 / span 1;
         grid-row: 1 / span 1;
-        p {
-            text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        p{
+            margin: 2px;
         }
     }
     .review-details__time-created{
@@ -139,8 +148,11 @@ body {
         color: $color4;
         grid-column: 3 / span 1;
         grid-row: 2 / span 1;
-        p {
-            text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        p{
+            margin: 2px;
         }
     }
     .review-details__rating{
