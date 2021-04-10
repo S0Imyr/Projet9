@@ -9,11 +9,23 @@
     <div class='review-details__time-created'>
         <p>{{ post.content.time_created }}</p>
     </div>
+    <div class='review-details__rating'>
+        {% if post.content.rating == 0 %}
+            <h1>☆☆☆☆☆</h1>
+        {% elif post.content.rating == 1 %}
+            <h1>★☆☆☆☆</h1>
+        {% elif post.content.rating == 2 %}
+            <h1>★★☆☆☆</h1>
+        {% elif post.content.rating == 3 %}
+            <h1>★★★☆☆</h1>
+        {% elif post.content.rating == 4 %}
+            <h1>★★★★☆</h1>
+        {% elif post.content.rating == 5 %}
+            <h1>★★★★★</h1>
+        {% endif %}
+    </div>
     <div class='review-details__headline'>
         <h2>{{ post.content.headline }}</h2>
-    </div>
-    <div class='review-details__rating'>
-        <p>{{ post.content.rating }}</p>
     </div>
     <div class='review-details__body'>
         <p>{{ post.content.body }}</p>
