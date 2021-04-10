@@ -208,6 +208,11 @@ section table td {
   height: 20%;
 }
 
+.ticket-form, .review-form {
+  border: solid #a2cdb8;
+  margin: 10px;
+}
+
 .entry {
   padding: 10px;
 }
@@ -219,6 +224,12 @@ section table td {
 .entry .entry__input input, .entry .entry__input textarea {
   width: 90%;
   padding: 10px;
+}
+.entry .entry__radio-input ul {
+  width: 60%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
 }
 .entry .entry__input-button {
   display: flex;

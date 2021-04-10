@@ -1,12 +1,60 @@
 {% extends 'main.html' %}
+{% load static %}
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
+{% endblock %}
 {% block content %}
-    <form method="POST" action="{% url 'addreview' %}">
+<section>
+    <form method="POST" action="">
         {% csrf_token %}
-        {{ ticketform }}
+        <div class="ticket-form">
+            <h2>L'oeuvre et l'auteur</h2>
+            <div class="entry">
+                <div class="entry__label"><p>Titre de l'oeuvre - Auteur : </p></div>
+                <div class="entry__input"> {{ form.ticket_title }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"><p> Description: <p></div>
+                <div class="entry__input"> {{ form.ticket_description }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"><p> Image </p></div>
+                <div class="entry__input"> {{ form.ticket_image }} </div>
+            </div>
+            <div class="entry None">
+                <div class="entry__label None"> Utilisateur </div>
+                <div class="entry__input None"> {{ form.ticket_user }} </div>
+            </div>
+        </div>
+        <div class="review-form">
+            <h2>Votre critique</h2>
+            <div class="entry">
+                <div class="entry__label"> Note </div>
+                <div class="entry__radio-input"> {{ form.review_rating }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"> Titre </div>
+                <div class="entry__input"> {{ form.review_headline }} </div>
+            </div>
+            <div class="entry">
+                <div class="entry__label"> Critique </div>
+                <div class="entry__input"> {{ form.review_body }} </div>
+            </div>
+            <div class="entry None">
+                <div class="entry__label"> Demande </div>
+                <div class="entry__input"> {{ form.review_ticket }} </div>
+            </div>
+            <div class="entry None">
+                <div class="entry__label"> Utilisateur </div>
+                <div class="entry__input"> {{ form.review_user }} </div>
+            </div>
+        </div>
+        <input type="submit" class="button"/>
+        <div class="errors">
+            {% if POST %}
+                {{POST}}
+            {% endif %}
+        </div>
     </form>
-    -----
-    <form method="POST" action="{% url 'addreview' %}">
-        {% csrf_token %}
-        {{ reviewform }}
-    </form>
+</section>
 {% endblock %}

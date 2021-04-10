@@ -6,7 +6,7 @@ from itertools import chain
 
 from authentification.models import User
 from review.models import Ticket, Review, UserFollows
-from review.forms import TicketForm, ReviewForm
+from review.forms import TicketForm, ReviewForm, TicketReviewForm
 
 
 def get_followed_user(user):
@@ -166,19 +166,28 @@ def delete_review(request, id_review):
 
 @login_required(login_url='home')
 def create_ticketreview(request):
+    context = {}
     if request.method == 'GET':
-        ticketform = TicketForm()
-        reviewform = ReviewForm()
-        return render(request, 'addticketreview.html', {'ticketform': ticketform, 'reviewform ': reviewform })
+        form = TicketReviewForm()
+        return render(request, 'addticketreview.html', {'form': form})
     elif request.method == 'POST':
-        ticket = TicketForm(request.POST)
-        if form.is_valid():
-            article = ticket.save()
-            review = ReviewForm(request.POST)
-            if form.is_valid():
-                article = review.save()
-                return redirect('flux')
+        data = request.POST
+        ticket_form = TicketForm({'title': data['ticket_title'],
+                                  'user': request.user,
+                                 'description': data['ticket_description'],
+                                 'image': data['ticket_image']})
 
+        if ticket_form.is_valid():
+            ticket = ticket_form.save()
+            review_form = ReviewForm({'ticket': ticket,
+                                      'rating': data['review_rating'],
+                                      'headline': data['review_headline'],
+                                      'body': data['review_body'],
+                                      'user': request.user})
+            if review_form.is_valid():
+                review_form.save()
+                return render(request, 'flux.html', context)
+ 
 
 @login_required(login_url='home')
 def follow(request):
@@ -199,6 +208,7 @@ def follow(request):
         return redirect('follow')
 
 
+@login_required(login_url='home')
 def delete_follow(request, id_followed_user):
     followed_user = User.objects.get(pk=id_followed_user)
     link = UserFollows.objects.get(user=request.user, followed_user=followed_user)

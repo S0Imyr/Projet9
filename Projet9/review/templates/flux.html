@@ -6,7 +6,7 @@
 {% block content %}
     <div class="buttons flux-header">
         <a href="{% url 'addticket' %}" class="button2"><button>Demander une critique</button></a>
-        <a href="" class="button2"><button>Créer une critique</button></a>
+        <a href="{% url 'addticketreview' %}" class="button2"><button>Créer une critique</button></a>
     </div>
     <div class='flux'>
         {% for post in posts %}
