@@ -182,7 +182,7 @@ body {
   background-color: #a2cdb8;
   color: #203961;
   display: grid;
-  grid-template-rows: 40% 30% 30%;
+  grid-template-rows: 25% 25% 50%;
 }
 .review-details .review-details__ticket .review-details__ticket__user {
   grid-row: 1/span 1;
