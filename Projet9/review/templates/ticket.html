@@ -2,9 +2,9 @@
 <div class='ticket-details'>
     <div class='ticket-details__user'>
         {% if post.content.user == request.user %}
-            <p>Vous avez demandé une critique :</p>
+            <p>Vous avez demandé une critique</p>
         {% else %}
-            <p>{{ post.content.user }} a demandé une critique :</p>
+            <p>{{ post.content.user }} a demandé une critique</p>
         {% endif %}
     </div>
     <div class="ticket-details__time-created">
@@ -12,6 +12,7 @@
     </div>
     <div class="ticket-details__button">
         {% if not post.content.answered and post.content.id %}
+            <p> {{post.content.answered}} {{post.content.id}}</p>
             <a href='{% url "addreview" id_ticket=post.content.id %}' class="button"><button>Créer une critique</button></a>
         {% endif %}
     </div>

@@ -121,19 +121,17 @@ def create_review(request, id_ticket=None):
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:
         review = Review(ticket=None, rating=None, headline=None, body=None, user=request.user, time_created=None)
-
-
     if request.method == 'GET':
         form = ReviewForm(instance=review)
         context['form'] = form
         return render(request, 'addreview.html', context)
-
-
     elif request.method == 'POST':
         form = ReviewForm(request.POST)
-
         if form.is_valid():
             article = form.save()
+            ticket.answered = True
+            ticket.save()
+            print(ticket.answered)
             return redirect('flux')
         else:
             return render(request, 'addreview.html', context)
@@ -186,6 +184,8 @@ def create_ticketreview(request):
                                       'user': request.user})
             if review_form.is_valid():
                 review_form.save()
+                ticket.answered = True
+                ticket.save()
                 return render(request, 'flux.html', context)
  
 
