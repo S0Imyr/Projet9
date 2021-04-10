@@ -18,4 +18,6 @@ urlpatterns = [
     path('deletereview/<int:id_review>', views.delete_review, name="deletereview"),
 
     path('addticketreview/', views.create_ticketreview, name="addticketreview"),
+
+    path('deletefollow/<int:id_followed_user>', views.delete_follow, name="deletefollow"),
 ]

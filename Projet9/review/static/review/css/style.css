@@ -187,9 +187,10 @@ body {
 }
 
 /* forms */
-.newform {
+section {
   border: solid #e1755e;
   padding: 10px;
+  margin: 10px;
 }
 
 .entry {

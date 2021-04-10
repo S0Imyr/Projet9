@@ -199,6 +199,13 @@ def follow(request):
         return redirect('follow')
 
 
+def delete_follow(request, id_followed_user):
+    followed_user = User.objects.get(pk=id_followed_user)
+    link = UserFollows.objects.get(user=request.user, followed_user=followed_user)
+    link.delete()
+    return redirect('follow')
+
+
 @login_required(login_url='home')
 def posts(request):
     tickets = Ticket.objects.filter(user=request.user)

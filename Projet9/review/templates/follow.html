@@ -8,27 +8,27 @@
     <h1>Mes abonnements</h1>
 </div>
 <div class="flux">
-    <div class="follow">
+    <section>
         <h2>Suivre d'autres utilisateurs</h2>
         <form method="POST">
             {% csrf_token %}
             <input type="text" placeholder="Nom d'utilisateur" name="new_followed_user">
             <input type="submit" name="new_followed" class='button'>
         </form>
-    </div>
-    <div class="followed">
+    </section>
+    <section>
         <h2>Abonnements</h2>
         {% if followed_users %}
         <table>
             {% for followed_user in followed_users %} 
-                <tr><td> {{ followed_user }} </td><td><a href="" class='button'><button>Se désabonner</button></a></td></tr>
+                <tr><td> {{ followed_user }} </td><td><a href="{% url 'deletefollow' id_followed_user=followed_user.pk %}" class='button'><button>Se désabonner</button></a></td></tr>
             {% endfor %}
         </table>
         {% else %}
             <p>Aucun utilisateur suivi</p>
         {% endif %}
-    </div>
-    <div class="followers">
+    </section>
+    <section>
         <h2>Abonnés</h2>
         {% if followers %}
         <table>
@@ -39,6 +39,6 @@
         {% else %}
             <p>Aucun abonné</p>
         {% endif %}
-    </div>
+    </section>
 </div>
 {% endblock %}
