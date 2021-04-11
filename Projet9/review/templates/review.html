@@ -38,7 +38,9 @@
             <h3>{{post.content.ticket.title}}</h1>
         </div>
         <div class="review-details__ticket__image">
-            <p>{{post.content.ticket.image}}</p>
+            {% if post.content.ticket.image %}
+                <img src='/media/{{post.content.ticket.image }}' alt="Couverture">
+            {% endif %}
         </div>
     </div>
 </div>

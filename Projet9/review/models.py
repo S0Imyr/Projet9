@@ -1,4 +1,5 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from django.db import models
 
@@ -8,7 +9,7 @@ class Ticket(models.Model):
     description = models.TextField(max_length=2048, blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
-    image = models.ImageField(null=True, upload_to='images', blank=True)
+    image = models.ImageField(null=True, blank=True)
     time_created = models.DateTimeField(auto_now_add=True)
     answered = False
 

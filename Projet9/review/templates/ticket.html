@@ -22,11 +22,10 @@
         <p>{{ post.content.description }}</p>
     </div>
     <div class='ticket-details__image'>
-        <p>{{post.content.image}}</p>
         {% if not post.content.image %}
             <img src="{% static 'images/livre.png'%}" alt="Livre commun" class="img">
         {% else %}
-            <img src="{{ post.content.image }}" alt="Livre commun" class="img">
+            <img src='/media/{{post.content.image }}' alt="Couverture" class="img">
         {% endif %}
     </div>
 </div>

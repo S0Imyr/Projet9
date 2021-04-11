@@ -111,10 +111,12 @@ body {
 
 
     .ticket-details__image{
+        padding: 5px;
         background-color: $color3;
         color: $color2;
         grid-column: 1 / span 1;
         grid-row: 3 / span 2;
+        overflow: hidden;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -201,6 +203,11 @@ body {
         .review-details__ticket__image{
             grid-row: 3 / span 1;
             margin: auto;
+            height: 100%;
+            img {
+                padding:5px;
+                max-height: 90%;
+            }
         }
     }
 }

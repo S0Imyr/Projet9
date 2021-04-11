@@ -105,10 +105,12 @@ body {
   overflow: auto;
 }
 .ticket-details .ticket-details__image {
+  padding: 5px;
   background-color: #a2cdb8;
   color: #203961;
   grid-column: 1/span 1;
   grid-row: 3/span 2;
+  overflow: hidden;
 }
 .ticket-details .ticket-details__image img {
   max-width: 100%;
@@ -196,6 +198,11 @@ body {
 .review-details .review-details__ticket .review-details__ticket__image {
   grid-row: 3/span 1;
   margin: auto;
+  height: 100%;
+}
+.review-details .review-details__ticket .review-details__ticket__image img {
+  padding: 5px;
+  max-height: 90%;
 }
 
 .rating {
