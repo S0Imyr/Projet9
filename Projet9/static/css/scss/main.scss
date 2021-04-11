@@ -50,30 +50,19 @@ header{
         grid-row: 2 / span 1;
     }
 }
-input.button {
+input.button, .button button {
     display: block;
-    color:$color1;
+    color: $color1;
     background-color: $color4;
+    border: $color4;
     margin: auto;
-    border-radius: 15px;
     padding: 10px;
-}
-
-.button {
-    button {
-    display: block;
-    color:$color1;
-    background-color: $color4;
-    margin: auto;
-    border-radius: 15px;
-    padding: 10px;
-    }
 }
 
 .button2 {
     button {
         display: block;
-        border: $color2;
+        border: $color3;
         color:$color1;
         background-color: $color3;
         font-weight: bold;

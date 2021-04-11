@@ -43,27 +43,18 @@ header .logout {
   grid-row: 2/span 1;
 }
 
-input.button {
+input.button, .button button {
   display: block;
   color: #f9fbfc;
   background-color: #e1755e;
+  border: #e1755e;
   margin: auto;
-  border-radius: 15px;
-  padding: 10px;
-}
-
-.button button {
-  display: block;
-  color: #f9fbfc;
-  background-color: #e1755e;
-  margin: auto;
-  border-radius: 15px;
   padding: 10px;
 }
 
 .button2 button {
   display: block;
-  border: #203961;
+  border: #a2cdb8;
   color: #f9fbfc;
   background-color: #a2cdb8;
   font-weight: bold;
