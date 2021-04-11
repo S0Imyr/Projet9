@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import CharField, Value
 from django.contrib.auth.decorators import login_required
 
@@ -75,7 +75,7 @@ def flux(request):
 @login_required(login_url='home')
 def create_ticket(request, id_ticket=None):
     if id_ticket is not None:
-        ticket = Ticket.objects.get(pk=id_ticket)
+        ticket = get_object_or_404(Ticket, pk=id_ticket)
     else:
         ticket = Ticket(user=request.user)
     if request.method == 'GET':
@@ -93,7 +93,7 @@ def create_ticket(request, id_ticket=None):
 @login_required(login_url='home')
 def modify_ticket(request, id_ticket):
     context = {}
-    ticket = Ticket.objects.get(pk=id_ticket)
+    ticket = get_object_or_404(Ticket, pk=id_ticket)
     if request.method == 'GET':
         if ticket is None:
             pass
@@ -109,7 +109,7 @@ def modify_ticket(request, id_ticket):
 
 @login_required(login_url='home')
 def delete_ticket(request, id_ticket):
-    ticket = Ticket.objects.get(pk=id_ticket)
+    ticket = get_object_or_404(Ticket, pk=id_ticket)
     ticket.delete()
     return redirect('posts')
 
@@ -119,7 +119,7 @@ def create_review(request, id_ticket=None):
     review = None
     context = {}
     if id_ticket is not None:
-        ticket = Ticket.objects.get(pk=id_ticket)
+        ticket = get_object_or_404(Ticket, pk=id_ticket)
         context = {'post': {'content': ticket}}
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:
@@ -141,7 +141,7 @@ def create_review(request, id_ticket=None):
 @login_required(login_url='home')
 def modify_review(request, id_review):
     context = {}
-    review = Review.objects.get(pk=id_review)
+    review = get_object_or_404(Review, pk=id_review)
     if request.method == 'GET':
         if review is None:
             pass
@@ -157,7 +157,7 @@ def modify_review(request, id_review):
 
 @login_required(login_url='home')
 def delete_review(request, id_review):
-    review = Review.objects.get(pk=id_review)
+    review = get_object_or_404(Review, pk=id_review)
     review.ticket.answered = False
     review.delete()
     return redirect('posts')
@@ -205,8 +205,8 @@ def follow(request):
 
 @login_required(login_url='home')
 def delete_follow(request, id_followed_user):
-    followed_user = User.objects.get(pk=id_followed_user)
-    link = UserFollows.objects.get(user=request.user, followed_user=followed_user)
+    followed_user = get_object_or_404(User, pk=id_followed_user)
+    link = get_object_or_404(UserFollows, user=request.user, followed_user=followed_user)
     link.delete()
     return redirect('follow')
 
