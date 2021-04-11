@@ -62,6 +62,9 @@ def annotate_post(posts):
 def flux(request):
     tickets = get_users_viewable_tickets(request.user)
     reviews = get_users_viewable_reviews(request.user)
+    for ticket in tickets:
+        if Review.objects.filter(ticket=ticket):
+            ticket.answered = True
     posts = sorted(chain(tickets, reviews),
                       key=lambda post: post.time_created,
                       reverse=True)
@@ -129,9 +132,7 @@ def create_review(request, id_ticket=None):
         form = ReviewForm(request.POST)
         if form.is_valid():
             article = form.save()
-            ticket.answered = True
             ticket.save()
-            print(ticket.answered)
             return redirect('flux')
         else:
             return render(request, 'addreview.html', context)
@@ -184,8 +185,6 @@ def create_ticketreview(request):
                                       'user': request.user})
             if review_form.is_valid():
                 review_form.save()
-                ticket.answered = True
-                ticket.save()
                 return render(request, 'flux.html', context)
  
 
@@ -220,6 +219,9 @@ def delete_follow(request, id_followed_user):
 def posts(request):
     tickets = Ticket.objects.filter(user=request.user)
     reviews = Review.objects.filter(user=request.user)
+    for ticket in tickets:
+        if Review.objects.filter(ticket=ticket):
+            ticket.answered = True
     posts = sorted(chain(tickets, reviews),
                       key=lambda post: post.time_created,
                       reverse=True)
