@@ -34,7 +34,7 @@ def get_users_viewable_tickets(user):
 
 def get_users_viewable_reviews(user):
     reviews = []
-    followed_users = get_followers(user)
+    followed_users = get_followed_user(user)
     followed_users.append(user)
     my_tickets = Ticket.objects.filter(user=user)
     for ticket in my_tickets:
@@ -192,12 +192,8 @@ def create_ticketreview(request):
 def follow(request):
     context = {}
     if request.method == 'GET':
-        followed_users=[]
-        for link in UserFollows.objects.filter(user=request.user):
-            followed_users.append(link.followed_user)
-        followers=[]
-        for link in UserFollows.objects.filter(followed_user=request.user):
-            followers.append(link.user)
+        followed_users = get_followed_user(request.user)
+        followers = get_followers(request.user)
         context = {'followed_users': followed_users, 'followers': followers}
         return render(request, 'follow.html', context)
     elif request.method == 'POST':
