@@ -94,6 +94,7 @@ body {
 }
 .ticket-details .ticket-details__title h2 {
   text-align: center;
+  color: #a2cdb8;
 }
 .ticket-details .ticket-details__body {
   padding: 15px;

@@ -120,7 +120,7 @@ def create_review(request, id_ticket=None):
     context = {}
     if id_ticket is not None:
         ticket = Ticket.objects.get(pk=id_ticket)
-        context['post'] = ticket
+        context = {'post': {'content': ticket}}
         review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
     else:
         review = Review(ticket=None, rating=None, headline=None, body=None, user=request.user, time_created=None)
