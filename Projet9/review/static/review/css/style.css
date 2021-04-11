@@ -230,9 +230,12 @@ body {
 
 /* forms */
 section {
+  max-width: 1084px;
   border: solid #e1755e;
   padding: 30px;
-  margin: 10px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 section h2 {
   color: #203961;

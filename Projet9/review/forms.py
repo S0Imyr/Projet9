@@ -2,7 +2,7 @@ from django import forms
 from django.forms.widgets import RadioSelect
 from review.models import Ticket, Review
 
-CHOICES = (("1", 1), ("2", 2), ("3", 3), ("4", 4), ("5", 5))
+CHOICES = (("0", 0), ("1", 1), ("2", 2), ("3", 3), ("4", 4), ("5", 5))
 
 class TicketForm(forms.ModelForm):
     class Meta:

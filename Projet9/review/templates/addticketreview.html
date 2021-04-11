@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="{% static 'review/css/style.css'%}">
 {% endblock %}
 {% block content %}
+<div class="flux-header">
+    <h1>Créer une critique</h1>
+</div>
 <section>
     <form method="POST" action="">
         {% csrf_token %}
@@ -13,8 +16,8 @@
                 <div class="entry__label"><p>Titre de l'oeuvre - Auteur : </p></div>
                 <div class="entry__input"> {{ form.ticket_title }} </div>
             </div>
-            <div class="entry">
-                <div class="entry__label"><p> Description: <p></div>
+            <div class="entry None">
+                <div class="entry__label"><p> Votre demande : <p></div>
                 <div class="entry__input"> {{ form.ticket_description }} </div>
             </div>
             <div class="entry">
@@ -33,7 +36,7 @@
                 <div class="entry__radio-input"> {{ form.review_rating }} </div>
             </div>
             <div class="entry">
-                <div class="entry__label"> Titre </div>
+                <div class="entry__label"> Titre de la critique</div>
                 <div class="entry__input"> {{ form.review_headline }} </div>
             </div>
             <div class="entry">
