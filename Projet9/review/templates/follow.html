@@ -22,27 +22,27 @@
     </section>
     <section>
         <h2>Abonnements</h2>
-        {% if followed_users %}
         <table>
+        {% if followed_users %}
             {% for followed_user in followed_users %} 
                 <tr><td> {{ followed_user }} </td><td><a href="{% url 'deletefollow' id_followed_user=followed_user.pk %}" class='button'><button>Se désabonner</button></a></td></tr>
             {% endfor %}
-        </table>
         {% else %}
-            <p>Aucun utilisateur suivi</p>
+            <tr><td>Aucun utilisateur suivi</td></tr>
         {% endif %}
+        </table>
     </section>
     <section>
         <h2>Abonnés</h2>
-        {% if followers %}
         <table>
+        {% if followers %}
             {% for follower in followers %} 
                 <tr><td> {{ follower }} </td></tr>
             {% endfor %}
-        </table>
         {% else %}
-            <p>Aucun abonné</p>
+            <tr><td>Aucun abonné</td></tr>
         {% endif %}
+        </table>
     </section>
 </div>
 {% endblock %}
