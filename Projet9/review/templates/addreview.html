@@ -18,15 +18,15 @@
             <form method="POST" action="">
                 {% csrf_token %}
                 <div class="entry">
-                    <div class="entry__label"> Note </div>
+                    <div class="entry__label"><h3>Note :</h3> </div>
                     <div class="entry__radio-input"> {{ form.rating }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"> Titre de votre critique </div>
+                    <div class="entry__label"><h3>Titre de votre critique :</h3></div>
                     <div class="entry__input"> {{ form.headline }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"> La critique </div>
+                    <div class="entry__label"><h3>La critique :</h3> </div>
                     <div class="entry__input"> {{ form.body }} </div>
                 </div>
                 <div class="entry None">

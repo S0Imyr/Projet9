@@ -242,6 +242,10 @@ section h2 {
   color: #203961;
   padding-left: 30px;
 }
+section p {
+  padding-left: 50px;
+  color: #5d554b;
+}
 section table {
   width: 80%;
   margin: auto;

@@ -20,8 +20,8 @@ class ReviewForm(forms.ModelForm):
 
 class TicketReviewForm(forms.Form):
     ticket_title = forms.CharField(max_length=128)
-    ticket_description = forms.CharField(widget=forms.Textarea)
-    ticket_image = forms.ImageField()
+    ticket_description = forms.CharField(widget=forms.Textarea, required=False)
+    ticket_image = forms.ImageField(required=False)
     review_rating = forms.ChoiceField(choices=CHOICES, widget=RadioSelect())
     review_headline = forms.CharField(max_length=128)
     review_body = forms.CharField(max_length=8192, widget=Textarea)

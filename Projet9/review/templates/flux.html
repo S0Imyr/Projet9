@@ -9,12 +9,17 @@
         <a href="{% url 'addticketreview' %}" class="button2"><button>Créer une critique</button></a>
     </div>
     <div class='flux'>
-        {% for post in posts %}
-            {% if post.type == 'TICKET' %}
-                {% include 'ticket.html' %}
-            {% elif post.type == 'REVIEW' %}
-                {% include 'review.html' %}
-            {% endif %}
-        {% endfor %}
+        {% if posts %}
+            {% for post in posts %}
+                {% if post.type == 'TICKET' %}
+                    {% include 'ticket.html' %}
+                {% elif post.type == 'REVIEW' %}
+                    {% include 'review.html' %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <h2> Aucun abonnement </h2>
+            <p>Pour débuter aller dans la rubrique abonnements</p>
+        {% endif %}
     </div>
 {% endblock %}

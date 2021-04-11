@@ -12,15 +12,15 @@
             <form method="POST" action="" class="newform">
                 {% csrf_token %}
                 <div class="entry">
-                    <div class="entry__label"><p>Titre de l'oeuvre - Auteur : </p></div>
+                    <div class="entry__label"><h3>Titre de l'oeuvre - Auteur : </h3></div>
                     <div class="entry__input"> {{ form.title }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"><p>{{ form.description.label }}: <p></div>
+                    <div class="entry__label"><h3>Votre demande : <h3></div>
                     <div class="entry__input"> {{ form.description }} </div>
                 </div>
                 <div class="entry">
-                    <div class="entry__label"><p>{{ form.image.label }}</p></div>
+                    <div class="entry__label"><h3>Ajouter une image :</h3></div>
                     <div class="entry__input"> {{ form.image }} </div>
                 </div>
                 <div class="entry">
