@@ -21,7 +21,17 @@
                 </div>
                 <div class="entry">
                     <div class="entry__label"><h3>Ajouter une image :</h3></div>
-                    <div class="entry__input"> {{ form.image }} </div>
+                    <div class="entry__input">
+                        {% if form.instance.image.name %}
+                            <table>
+                                <tr><td><p>Actuellement :</p></td><td><a href="/media/{{form.instance.image.name}}">{{form.instance.image.name}}</a></td></tr>
+                                <tr><td><label for="image-clear_id">Effacer :</label></td><td><input type="checkbox" name="image-clear" id="image-clear_id"></td></tr>
+                                <tr><td><p>Modifier :</p></td><td><input type="file" name="image" accept="image/*" id="id_image"></td></tr>
+                            </table>
+                        {% else %}
+                            {{ form.image }}
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="entry">
                     <div class="entry__label None"> {{ form.user.label }} </div>

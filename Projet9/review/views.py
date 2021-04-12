@@ -147,7 +147,7 @@ def modify_review(request, id_review):
             pass
         else:
             form = ReviewForm(instance=review)
-            context['form'] = form
+            context = {'post': {'content': review.ticket}, 'form': form}
         return render(request, 'review/addreview.html', context)
     elif request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
