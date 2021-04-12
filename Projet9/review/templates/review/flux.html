@@ -12,9 +12,9 @@
         {% if posts %}
             {% for post in posts %}
                 {% if post.type == 'TICKET' %}
-                    {% include 'ticket.html' %}
+                    {% include 'review/ticket.html' %}
                 {% elif post.type == 'REVIEW' %}
-                    {% include 'review.html' %}
+                    {% include 'review/review.html' %}
                 {% endif %}
             {% endfor %}
         {% else %}

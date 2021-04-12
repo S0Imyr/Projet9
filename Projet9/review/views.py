@@ -69,7 +69,7 @@ def flux(request):
                       key=lambda post: post.time_created,
                       reverse=True)
     context = {'posts': annotate_post(posts)}
-    return render(request, 'flux.html', context)
+    return render(request, 'review/flux.html', context)
 
 
 @login_required(login_url='home')
@@ -80,14 +80,14 @@ def create_ticket(request, id_ticket=None):
         ticket = Ticket(user=request.user)
     if request.method == 'GET':
         form = TicketForm(instance=ticket)
-        return render(request, 'addticket.html', {'form': form})
+        return render(request, 'review/addticket.html', {'form': form})
     elif request.method == 'POST':
         form = TicketForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save()
             return redirect('flux')
         else:
-            return render(request, 'addticket.html', {'form': form})
+            return render(request, 'review/addticket.html', {'form': form})
 
 
 @login_required(login_url='home')
@@ -100,7 +100,7 @@ def modify_ticket(request, id_ticket):
         else:
             form = TicketForm(instance=ticket)
             context['form'] = form
-        return render(request, 'addticket.html', context)
+        return render(request, 'review/addticket.html', context)
     elif request.method == 'POST':
         form = TicketForm(request.POST, request.FILES, instance=ticket)
         if form.is_valid():
@@ -127,7 +127,7 @@ def create_review(request, id_ticket=None):
     if request.method == 'GET':
         form = ReviewForm(instance=review)
         context['form'] = form
-        return render(request, 'addreview.html', context)
+        return render(request, 'review/addreview.html', context)
     elif request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -135,7 +135,7 @@ def create_review(request, id_ticket=None):
             ticket.save()
             return redirect('flux')
         else:
-            return render(request, 'addreview.html', context)
+            return render(request, 'review/addreview.html', context)
 
 
 @login_required(login_url='home')
@@ -148,7 +148,7 @@ def modify_review(request, id_review):
         else:
             form = ReviewForm(instance=review)
             context['form'] = form
-        return render(request, 'addreview.html', context)
+        return render(request, 'review/addreview.html', context)
     elif request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
@@ -168,7 +168,7 @@ def create_ticketreview(request):
     context = {}
     if request.method == 'GET':
         form = TicketReviewForm()
-        return render(request, 'addticketreview.html', {'form': form})
+        return render(request, 'review/addticketreview.html', {'form': form})
     elif request.method == 'POST':
         data = request.POST
         ticket_form = TicketForm({'title': data['ticket_title'],
@@ -194,7 +194,7 @@ def follow(request):
         followed_users = get_followed_user(request.user)
         followers = get_followers(request.user)
         context = {'followed_users': followed_users, 'followers': followers}
-        return render(request, 'follow.html', context)
+        return render(request, 'review/follow.html', context)
     elif request.method == 'POST':
         new_followed_user = User.objects.filter(username=request.POST['new_followed_user'])[0]
         if new_followed_user:
@@ -221,4 +221,4 @@ def posts(request):
                       key=lambda post: post.time_created,
                       reverse=True)
     context = {'posts': annotate_post(posts)}
-    return render(request, 'posts.html', context)
+    return render(request, 'review/posts.html', context)
