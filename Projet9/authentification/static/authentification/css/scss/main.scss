@@ -75,3 +75,10 @@ body {
         }
     }
 }
+
+@media all and (max-width: 850px) {
+    .flux{
+        align-items: center;
+        flex-direction: column;
+    }
+}

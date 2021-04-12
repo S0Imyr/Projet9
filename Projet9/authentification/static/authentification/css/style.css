@@ -67,4 +67,11 @@ body {
   font-family: "Fjalla One", sans-serif;
 }
 
+@media all and (max-width: 850px) {
+  .flux {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
