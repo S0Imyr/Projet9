@@ -20,7 +20,7 @@ def login_page(request):
             else:
                 messages.info(request, "Nom d'utilisateur ou mot de passe incorrect")
         context = {}
-        return render(request, 'home.html', context)
+        return render(request, 'authentification/home.html', context)
 
 
 def logout_user(request):
@@ -41,10 +41,10 @@ def register(request):
                 messages.success(request, "Le compte a été créé au nom de :" + user)
                 return redirect('home')
         context = {'form': form}
-        return render(request, 'createaccount.html', context)
+        return render(request, 'authentification/createaccount.html', context)
 
 
 @login_required(login_url='home')
 def modify_account(request, id_user):
     context = {'id_user': id_user}
-    return render(request, 'modifyaccount.html')
+    return render(request, 'authentification/modifyaccount.html')
