@@ -8,7 +8,7 @@
     <h1>Créer une critique</h1>
 </div>
 <section>
-    <form method="POST" action="">
+    <form enctype="multipart/form-data" method="POST" novalidate>
         {% csrf_token %}
         <div class="ticket-form">
             <h2>L'oeuvre</h2>

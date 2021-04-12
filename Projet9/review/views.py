@@ -102,6 +102,7 @@ def modify_ticket(request, id_ticket):
             context['form'] = form
         return render(request, 'addticket.html', context)
     elif request.method == 'POST':
+        print(request.POST)
         form = TicketForm(request.POST, instance=ticket)
         if form.is_valid():
             form.save()
@@ -175,7 +176,6 @@ def create_ticketreview(request):
                                   'user': request.user,
                                  'description': data['ticket_description'],
                                  'image': data['ticket_image']})
-
         if ticket_form.is_valid():
             ticket = ticket_form.save()
             review_form = ReviewForm({'ticket': ticket,
@@ -185,7 +185,7 @@ def create_ticketreview(request):
                                       'user': request.user})
             if review_form.is_valid():
                 review_form.save()
-                return render(request, 'flux.html', context)
+                return redirect('flux')
  
 
 @login_required(login_url='home')

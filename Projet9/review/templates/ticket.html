@@ -25,7 +25,7 @@
         {% if not post.content.image %}
             <img src="{% static 'images/livre.png'%}" alt="Livre commun" class="img">
         {% else %}
-            <img src='/media/{{post.content.image }}' alt="Couverture" class="img">
+            <img src='{{MEDIA_URL}}{{post.content.image }}' alt="Couverture" class="img">
         {% endif %}
     </div>
 </div>
