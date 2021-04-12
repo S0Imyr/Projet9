@@ -82,7 +82,7 @@ def create_ticket(request, id_ticket=None):
         form = TicketForm(instance=ticket)
         return render(request, 'addticket.html', {'form': form})
     elif request.method == 'POST':
-        form = TicketForm(request.POST)
+        form = TicketForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save()
             return redirect('flux')
@@ -102,8 +102,7 @@ def modify_ticket(request, id_ticket):
             context['form'] = form
         return render(request, 'addticket.html', context)
     elif request.method == 'POST':
-        print(request.POST)
-        form = TicketForm(request.POST, instance=ticket)
+        form = TicketForm(request.POST, request.FILES, instance=ticket)
         if form.is_valid():
             form.save()
             return redirect('posts')
