@@ -1,7 +1,9 @@
 # Projet9
 
-### Principe :
-Il s'agit de créer un site internet qui met en relation des utilisateurs pour échanger leurs avis sur des livres. Il est réalisé dans le cadre d'une formation. 
+### Principe et configuration nécessaire :
+Il s'agit de créer un site internet qui met en relation des utilisateurs pour échanger leurs avis sur des livres. Il est réalisé dans le cadre d'une formation.
+
+Ce projet nécessite d'installer python, django et PostgreSQL.
 
 ## Installation
 ### Fichiers du site
