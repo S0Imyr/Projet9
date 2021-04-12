@@ -13,26 +13,20 @@ body {
 header{
     max-width: 1084px;
     height: 100px;
-    margin:auto;
-    display: grid;
+    margin: auto;
     background-color: $color1;
     color: $color2;
     font-weight: bold;
     padding-left: 2%;
     padding-right: 2%;
-    grid-template: 40% 20% 40% / 10% 60% 15% 15%;
-    img {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 3;
-        height: 100%;
+    .logo {
+        max-height: 100%;
+        img {
+            max-height: 100%;
+        }
     }
-    nav {
-        grid-column: 2 / span 1;
-        grid-row: 2 / span 1;
+    .navbar{
         ul {
-            display: grid;
-            grid-template-columns: 30% 30% 30%;
-            
             list-style:none;
             margin:0;
             padding-left:0;
@@ -41,13 +35,10 @@ header{
             }
         }
     }
-    .hello {
-        grid-column: 3 / span 1;
-        grid-row: 2 / span 1;
-    }
-    .logout {
-        grid-column: 4 / span 1;
-        grid-row: 2 / span 1;
+    .logout{
+        img {
+            visibility: hidden;
+        }
     }
 }
 input.button, .button button {
@@ -74,4 +65,101 @@ input.button, .button button {
 a {
     text-decoration:none; 
     color: $color2;
+}
+
+@media all and (min-width: 1024px) {
+    header{
+        display: grid;
+        grid-template: 40% 20% 40% / 10% 60% 15% 15%;
+        .logo{
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 3;
+        }
+        .navbar{
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+            ul {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+            }
+        }
+        .hello {
+            grid-column: 3 / span 1;
+            grid-row: 2 / span 1;
+        }
+        .logout {
+            grid-column: 4 / span 1;
+            grid-row: 2 / span 1;
+        }
+    }
+}
+
+
+@media all and (max-width: 1024px) and (min-width: 700px) {
+    header{
+        display: grid;
+        grid-template: 40% 20% 40% / 10% 70% 20%;
+        .logo{
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 3;
+        }
+        .navbar {
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+            ul {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+            }
+        }
+        .hello{
+            display: none;
+        }
+        .logout{
+            grid-column: 3 / span 1;
+            grid-row: 2 / span 1;
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+    header{
+        max-width: 80%;
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        justify-content: space-around;
+        .hello{
+            display: none;
+        }
+        .logo{
+            grid-column: 1 / span 1 ;
+            img {
+                width: 84.2px;
+                height: 100px;
+            }
+        }
+        .navbar{
+            grid-column: 2 / span 1 ;
+            max-height: 100%;
+            display: flex;
+            justify-content: center;
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+        .logout{
+            max-height: 100%;
+            text-align: center;
+            grid-column: 3 / span 1 ;
+            .logout_link{
+                visibility: hidden;
+            }
+            img{
+                visibility: visible;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
 }

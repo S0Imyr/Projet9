@@ -7,40 +7,28 @@ header {
   max-width: 1084px;
   height: 100px;
   margin: auto;
-  display: grid;
   background-color: #f9fbfc;
   color: #203961;
   font-weight: bold;
   padding-left: 2%;
   padding-right: 2%;
-  grid-template: 40% 20% 40%/10% 60% 15% 15%;
 }
-header img {
-  grid-column: 1/span 1;
-  grid-row: 1/span 3;
-  height: 100%;
+header .logo {
+  max-height: 100%;
 }
-header nav {
-  grid-column: 2/span 1;
-  grid-row: 2/span 1;
+header .logo img {
+  max-height: 100%;
 }
-header nav ul {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
+header .navbar ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-header nav ul li {
+header .navbar ul li {
   text-align: center;
 }
-header .hello {
-  grid-column: 3/span 1;
-  grid-row: 2/span 1;
-}
-header .logout {
-  grid-column: 4/span 1;
-  grid-row: 2/span 1;
+header .logout img {
+  visibility: hidden;
 }
 
 input.button, .button button {
@@ -65,6 +53,100 @@ input.button, .button button {
 a {
   text-decoration: none;
   color: #203961;
+}
+
+@media all and (min-width: 1024px) {
+  header {
+    display: grid;
+    grid-template: 40% 20% 40%/10% 60% 15% 15%;
+  }
+  header .logo {
+    grid-column: 1/span 1;
+    grid-row: 1/span 3;
+  }
+  header .navbar {
+    grid-column: 2/span 1;
+    grid-row: 2/span 1;
+  }
+  header .navbar ul {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+  }
+  header .hello {
+    grid-column: 3/span 1;
+    grid-row: 2/span 1;
+  }
+  header .logout {
+    grid-column: 4/span 1;
+    grid-row: 2/span 1;
+  }
+}
+@media all and (max-width: 1024px) and (min-width: 700px) {
+  header {
+    display: grid;
+    grid-template: 40% 20% 40%/10% 70% 20%;
+  }
+  header .logo {
+    grid-column: 1/span 1;
+    grid-row: 1/span 3;
+  }
+  header .navbar {
+    grid-column: 2/span 1;
+    grid-row: 2/span 1;
+  }
+  header .navbar ul {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+  }
+  header .hello {
+    display: none;
+  }
+  header .logout {
+    grid-column: 3/span 1;
+    grid-row: 2/span 1;
+  }
+}
+@media all and (max-width: 700px) {
+  header {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    justify-content: space-around;
+  }
+  header .hello {
+    display: none;
+  }
+  header .logo {
+    grid-column: 1/span 1;
+  }
+  header .logo img {
+    width: 84.2px;
+    height: 100px;
+  }
+  header .navbar {
+    grid-column: 2/span 1;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  header .navbar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  header .logout {
+    max-height: 100%;
+    text-align: center;
+    grid-column: 3/span 1;
+  }
+  header .logout .logout_link {
+    visibility: hidden;
+  }
+  header .logout img {
+    visibility: visible;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

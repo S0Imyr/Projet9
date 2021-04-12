@@ -1,4 +1,4 @@
-
+{% load static %}
 <nav class="navbar">
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -13,5 +13,8 @@
   </ul>
 </nav>
   <div class="hello">Hello, {{request.user}}</div>
-  <div class="logout"><a class="log-out" href="{% url 'logout' %}">Se déconnecter</a></div>
+  <div class="logout">
+    <a class="logout_link" href="{% url 'logout' %}">Se déconnecter</a>
+    <a href="{% url 'logout' %}"><img src="{% static 'images/Off.png'%}" alt="Log out"></a>
+  </div>
 

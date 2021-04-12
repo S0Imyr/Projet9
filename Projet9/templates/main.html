@@ -13,7 +13,9 @@
 </head>
 <body>
     <header>
-        <img src="{% static 'images/Logo.png'%}" alt="Logo LIT Review" class="img">
+        <div class="logo">
+            <img src="{% static 'images/Logo.png'%}" alt="Logo LIT Review">
+        </div>
         {%  include 'navbar.html' %}
     </header>
     {% block content %}
