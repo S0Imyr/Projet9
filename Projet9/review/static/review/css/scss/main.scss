@@ -8,6 +8,9 @@ $color5: #5d554b;
 body {
     font-family: 'Fjalla One', 'Helvetica',sans-serif;
     background-color: $color1;
+    h3 {
+        font-size: 0.9em;
+    }
 }
 
 .None {
@@ -41,7 +44,6 @@ body {
 
 .ticket-details {
     margin: 20px;
-    max-height: 400px;
     border: $color4 solid 2px;
     padding: 10px;
     display: grid;
@@ -126,7 +128,6 @@ body {
 .review-details {
     margin: 20px;
     min-height: 300px;
-    max-height: 400px;
     display: grid;
     border: $color3 solid 2px;
     padding: 10px;
@@ -192,7 +193,7 @@ body {
         grid-column: 3 / span 1;
         grid-row: 3 / span 1;
         display: grid;
-        grid-template-rows: 24% 24% 48%;
+        grid-template-rows: 15% 15% 70%;
         .review-details__ticket__user{
             grid-row: 1 / span 1;
             text-align: center;
@@ -204,10 +205,10 @@ body {
         .review-details__ticket__image{
             grid-row: 3 / span 1;
             margin: auto;
-            height: 100%;
+            
             img {
-                padding:5px;
-                max-height: 90%;
+                padding: 5px;
+                max-height: 90px;
             }
         }
     }
@@ -326,7 +327,7 @@ body {
         font-size: 1.1em;
     }
     h3 {
-        font-size: 1em;
+        font-size: 0.8em;
     }
     p{
         font-size: 0.8em;
@@ -338,3 +339,11 @@ body {
         }
     }
 }
+
+@-moz-document url-prefix() {
+    .ticket-details {
+        .ticket-details__body{
+            min-height: 230px;
+        }
+    }
+} 

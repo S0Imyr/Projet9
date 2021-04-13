@@ -3,6 +3,9 @@ body {
   font-family: "Fjalla One", "Helvetica", sans-serif;
   background-color: #f9fbfc;
 }
+body h3 {
+  font-size: 0.9em;
+}
 
 .None {
   display: none;
@@ -36,7 +39,6 @@ body {
 
 .ticket-details {
   margin: 20px;
-  max-height: 400px;
   border: #e1755e solid 2px;
   padding: 10px;
   display: grid;
@@ -119,7 +121,6 @@ body {
 .review-details {
   margin: 20px;
   min-height: 300px;
-  max-height: 400px;
   display: grid;
   border: #a2cdb8 solid 2px;
   padding: 10px;
@@ -186,7 +187,7 @@ body {
   grid-column: 3/span 1;
   grid-row: 3/span 1;
   display: grid;
-  grid-template-rows: 24% 24% 48%;
+  grid-template-rows: 15% 15% 70%;
 }
 .review-details .review-details__ticket .review-details__ticket__user {
   grid-row: 1/span 1;
@@ -199,11 +200,10 @@ body {
 .review-details .review-details__ticket .review-details__ticket__image {
   grid-row: 3/span 1;
   margin: auto;
-  height: 100%;
 }
 .review-details .review-details__ticket .review-details__ticket__image img {
   padding: 5px;
-  max-height: 90%;
+  max-height: 90px;
 }
 
 .rating {
@@ -261,9 +261,6 @@ section table {
 section table td {
   height: 20%;
 }
-section table td input {
-  width: 30px;
-}
 
 .ticket-form, .review-form {
   border: solid #a2cdb8;
@@ -315,7 +312,7 @@ section table td input {
   }
 
   h3 {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   p {
@@ -327,6 +324,11 @@ section table td input {
   }
   .review-details__ticket h3 {
     font-size: 0.8em;
+  }
+}
+@-moz-document url-prefix() {
+  .ticket-details .ticket-details__body {
+    min-height: 230px;
   }
 }
 
