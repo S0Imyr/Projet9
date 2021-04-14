@@ -35,14 +35,14 @@ Puis suivre les étapes suivantes :
 10. Alimenter la base de données des utilisateurs `$ python manage.py loaddata authentification/fixtures/auth.json`
 11. Alimenter la base de données des critiques `$ python manage.py loaddata review/fixtures/review.json`
 
-En cas de problème d'encodage, ne pas hésiter à utiliser un éditeur pour ouvrir et sauvegarder les fichiers JSON avec l'encodage utf-8.
+En cas de problème d'encodage, ne pas hésiter à utiliser un éditeur pour ouvrir et sauvegarder les fichiers JSON avec l'encodage utf-8. Puis réalimenter (étape 10 et 11).
 
 ### Lancement du serveur
 Revenir dans le terminal et tapper :
 
 12. Démarrer le serveur avec `$ python manage.py runserver`
 
-Lorsque le serveur fonctionne, après l'étape 7 de la procédure, le site internet est accessible à l'adresse : [http://localhost:8000/home/](http://localhost:8000/home/).
+Lorsque le serveur fonctionne, après l'étape 12 de la procédure, le site internet est accessible à l'adresse : [http://localhost:8000/home/](http://localhost:8000/home/).
 
 Voici quelques comptes pour explorer :
     - Utilisateur : johann 
