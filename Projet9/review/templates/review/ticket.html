@@ -12,7 +12,7 @@
     </div>
     <div class="ticket-details__button">
         {% if not post.content.answered and post.content.id %}
-            <a href='{% url "addreview" id_ticket=post.content.id %}' class="button"><button>Créer une critique</button></a>
+            <a href='{% url "addreview" id_ticket=post.content.id %}' class="button">Créer une critique</a>
         {% endif %}
     </div>
     <div class='ticket-details__title'>

@@ -10,12 +10,12 @@
     <div class="flux">
         <section>
             <div>
-                <p>Vous êtes en train de poster en réponse à</p>
+                <h3>Vous êtes en train de poster en réponse à</h3>
             </div>
             {% include 'review/ticket.html' %}
         </section>
         <section>
-            <form method="POST" action="">
+            <form method="POST">
                 {% csrf_token %}
                 <div class="entry">
                     <div class="entry__label"><h3>Note :</h3> </div>
@@ -41,6 +41,5 @@
             </form>
             {{ form.errors }}
         </section>
-        </div
     </div>
 {% endblock %}

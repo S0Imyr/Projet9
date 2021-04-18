@@ -6,8 +6,6 @@ $color4: #e1755e;
 $color5: #362c20;
 
 body {
-    max-width: 1084px;
-    margin: auto;
     font-family: 'Fjalla One', 'Helvetica',sans-serif;
     background-color: $color1;
     h3 {
@@ -83,7 +81,7 @@ body {
         grid-column: 3 / span 1;
         grid-row: 3 / span 1;
         display: grid;
-        grid-row: 40% 20% 40%;
+        grid-template-rows: 40% 20% 40%;
         a {
             grid-row: 2 / span 1;
         }
@@ -263,14 +261,16 @@ body {
         padding-left: 30px;
     }
     table {
-        width: 80%;
-        margin: auto;
+        margin-left: 5%;
         font-size: 14px;
         color: $color5;
         font-weight: bold;
         border-spacing: 5px;
-        td{
-            height: 20%;
+        td:nth-child(odd) {
+            width: 100px;
+        }
+        tr{
+            height: 40px;
         }
     }
  }

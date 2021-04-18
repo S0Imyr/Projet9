@@ -12,14 +12,14 @@
         {% if post.type == 'TICKET' %}
             {% include 'review/ticket.html' %}
             <div class="buttons">
-                <a href='{% url "modifyticket" id_ticket=post.content.id %}' class="button"><button>Modifier</button></a>
-                <a href='{% url "deleteticket" id_ticket=post.content.id %}' class="button"><button>Supprimer</button></a>
+                <a href='{% url "modifyticket" id_ticket=post.content.id %}' class="button">Modifier</a>
+                <a href='{% url "deleteticket" id_ticket=post.content.id %}' class="button">Supprimer</a>
             </div>
         {% elif post.type == 'REVIEW' %}
             {% include 'review/review.html' %}
             <div class="buttons">
-                <a href='{% url "modifyreview" id_review=post.content.id %}' class="button"><button>Modifier</button></a>
-                <a href='{% url "deletereview" id_review=post.content.id %}' class="button"><button>Supprimer</button></a>
+                <a href='{% url "modifyreview" id_review=post.content.id %}' class="button">Modifier</a>
+                <a href='{% url "deletereview" id_review=post.content.id %}' class="button">Supprimer</a>
             </div>
         {% endif %}
     {% endfor %}

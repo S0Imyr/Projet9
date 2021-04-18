@@ -25,7 +25,7 @@
         <table>
         {% if followed_users %}
             {% for followed_user in followed_users %} 
-                <tr><td> {{ followed_user }} </td><td><a href="{% url 'deletefollow' id_followed_user=followed_user.pk %}" class='button'><button>Se désabonner</button></a></td></tr>
+                <tr><td> {{ followed_user }} </td><td><a href="{% url 'deletefollow' id_followed_user=followed_user.pk %}" class='button'>Se désabonner</a></td></tr>
             {% endfor %}
         {% else %}
             <tr><td>Aucun utilisateur suivi</td></tr>
