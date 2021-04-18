@@ -1,5 +1,7 @@
 /*---- Base ----*/
 body {
+  max-width: 1084px;
+  margin: auto;
   font-family: "Fjalla One", "Helvetica", sans-serif;
   background-color: #f9fbfc;
 }
@@ -34,7 +36,6 @@ body h3 {
   margin: auto;
   padding: 2%;
   background-color: #f9fbfc;
-  opacity: 0.8;
 }
 
 .ticket-details {
@@ -129,7 +130,7 @@ body h3 {
 .review-details .review-details__user {
   font-size: 12px;
   padding: 5px;
-  background-color: #5d554b;
+  background-color: #362c20;
   color: #e1755e;
   grid-column: 3/span 1;
   grid-row: 1/span 1;
@@ -143,7 +144,7 @@ body h3 {
 .review-details .review-details__time-created {
   font-size: 12px;
   padding: 5px;
-  background-color: #5d554b;
+  background-color: #362c20;
   color: #e1755e;
   grid-column: 3/span 1;
   grid-row: 2/span 1;
@@ -158,7 +159,7 @@ body h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #5d554b;
+  background-color: #362c20;
   color: #e1755e;
   padding: 15px;
   grid-column: 1/span 1;
@@ -167,7 +168,7 @@ body h3 {
 .review-details .review-details__headline {
   display: flex;
   align-items: center;
-  background-color: #5d554b;
+  background-color: #362c20;
   color: #e1755e;
   padding: 15px;
   grid-column: 2/span 1;
@@ -175,7 +176,7 @@ body h3 {
 }
 .review-details .review-details__body {
   background-color: #e1755e;
-  color: #5d554b;
+  color: #362c20;
   overflow: auto;
   padding: 15px;
   grid-column: 1/span 2;
@@ -241,7 +242,7 @@ body h3 {
 section {
   max-width: 1084px;
   border: solid #e1755e;
-  padding: 30px;
+  padding: 15px;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -254,7 +255,7 @@ section table {
   width: 80%;
   margin: auto;
   font-size: 14px;
-  color: #5d554b;
+  color: #362c20;
   font-weight: bold;
   border-spacing: 5px;
 }
@@ -278,6 +279,7 @@ section table td {
 .entry .entry__input input, .entry .entry__input textarea {
   width: 90%;
   padding: 10px;
+  font-family: "Fjalla One", "Helvetica", sans-serif;
 }
 .entry .entry__radio-input ul {
   width: 60%;

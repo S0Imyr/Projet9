@@ -3,9 +3,11 @@ $color1: #f9fbfc;
 $color2: #203961;
 $color3: #a2cdb8;
 $color4: #e1755e;
-$color5: #5d554b;
+$color5: #362c20;
 
 body {
+    max-width: 1084px;
+    margin: auto;
     font-family: 'Fjalla One', 'Helvetica',sans-serif;
     background-color: $color1;
     h3 {
@@ -39,7 +41,6 @@ body {
     margin: auto;
     padding: 2%;
     background-color: $color1 ;
-    opacity: 0.8;
 }
 
 .ticket-details {
@@ -253,7 +254,7 @@ body {
  section{
     max-width: 1084px;
     border: solid $color4;
-    padding: 30px;
+    padding: 15px;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -290,6 +291,7 @@ body {
         input, textarea {
             width: 90%;
             padding: 10px;
+            font-family: 'Fjalla One', 'Helvetica',sans-serif;
         }
     }
     .entry__radio-input{
