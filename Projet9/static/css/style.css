@@ -31,7 +31,7 @@ header .logout img {
   visibility: hidden;
 }
 
-input.button, .button button {
+input.button, .button {
   display: block;
   color: #f9fbfc;
   background-color: #e1755e;
@@ -40,7 +40,7 @@ input.button, .button button {
   padding: 10px;
 }
 
-.button2 button {
+.button2 {
   display: block;
   border: #a2cdb8;
   color: #f9fbfc;

@@ -41,7 +41,7 @@ header{
         }
     }
 }
-input.button, .button button {
+input.button, .button {
     display: block;
     color: $color1;
     background-color: $color4;
@@ -51,15 +51,13 @@ input.button, .button button {
 }
 
 .button2 {
-    button {
-        display: block;
-        border: $color3;
-        color:$color1;
-        background-color: $color3;
-        font-weight: bold;
-        margin: auto;
-        padding: 10px;
-    }
+    display: block;
+    border: $color3;
+    color:$color1;
+    background-color: $color3;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
 }
 
 a {
