@@ -257,7 +257,7 @@ section table {
   border-spacing: 5px;
 }
 section table td:nth-child(odd) {
-  width: 100px;
+  width: 200px;
 }
 section table tr {
   height: 40px;
