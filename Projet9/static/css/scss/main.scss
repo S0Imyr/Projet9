@@ -5,10 +5,11 @@ $color3: #a2cdb8;
 $color4: #e1755e;
 $color5: #5d554b;
 
-
 body {
-    font-family: 'Fjalla One', 'Helvetica',sans-serif;
+    margin:auto;
+    max-width: 1084px;
 }
+
 
 header{
     max-width: 1084px;
@@ -37,26 +38,26 @@ header{
     }
     .logout{
         img {
-            visibility: hidden;
+            display: None;
         }
     }
 }
 input.button, .button {
-    display: block;
     color: $color1;
     background-color: $color4;
     border: $color4;
+    display: block;
     margin: auto;
     padding: 10px;
 }
 
 .button2 {
-    display: block;
     border: $color3;
     color:$color1;
     background-color: $color3;
     font-weight: bold;
-    margin: auto;
+    display: block;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -121,6 +122,7 @@ a {
 
 @media all and (max-width: 700px) {
     header{
+        height: 125px;
         max-width: 80%;
         display: grid;
         grid-template-columns: 33% 34% 33%;
@@ -148,13 +150,16 @@ a {
         }
         .logout{
             max-height: 100%;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             grid-column: 3 / span 1 ;
             .logout_link{
-                visibility: hidden;
+                display: none;
             }
             img{
-                visibility: visible;
+                display: inline;
                 width: 60px;
                 height: 60px;
             }

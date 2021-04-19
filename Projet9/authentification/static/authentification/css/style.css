@@ -59,6 +59,9 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .flux .createaccount a, .flux .login-box a, .flux .register a {
   text-decoration: none;

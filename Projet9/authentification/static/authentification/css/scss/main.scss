@@ -66,6 +66,9 @@ body {
             border-radius: 5px;
             padding: 10px;
             margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         a{
             text-decoration: none;
