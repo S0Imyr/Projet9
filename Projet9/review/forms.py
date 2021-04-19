@@ -4,10 +4,11 @@ from review.models import Ticket, Review
 
 CHOICES = (("0", 0), ("1", 1), ("2", 2), ("3", 3), ("4", 4), ("5", 5))
 
+
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        fields = ['title','description', 'user', 'image']
+        fields = ['title', 'description', 'user', 'image']
 
 
 class ReviewForm(forms.ModelForm):

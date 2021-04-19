@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.db.models import CharField, Value
 from django.contrib.auth.decorators import login_required
 
 from itertools import chain
@@ -10,14 +9,14 @@ from review.forms import TicketForm, ReviewForm, TicketReviewForm
 
 
 def get_followed_user(user):
-    followed_users=[]
+    followed_users = []
     for link in UserFollows.objects.filter(user=user):
         followed_users.append(link.followed_user)
     return followed_users
 
 
 def get_followers(user):
-    followers=[]
+    followers = []
     for link in UserFollows.objects.filter(followed_user=user):
         followers.append(link.user)
     return followers
@@ -66,8 +65,8 @@ def flux(request):
         if Review.objects.filter(ticket=ticket):
             ticket.answered = True
     posts = sorted(chain(tickets, reviews),
-                      key=lambda post: post.time_created,
-                      reverse=True)
+                   key=lambda post: post.time_created,
+                   reverse=True)
     context = {'posts': annotate_post(posts)}
     return render(request, 'review/flux.html', context)
 
@@ -84,7 +83,7 @@ def create_ticket(request, id_ticket=None):
     elif request.method == 'POST':
         form = TicketForm(request.POST, request.FILES)
         if form.is_valid():
-            article = form.save()
+            form.save()
             return redirect('flux')
         else:
             return render(request, 'review/addticket.html', {'form': form})
@@ -107,6 +106,7 @@ def modify_ticket(request, id_ticket):
             form.save()
             return redirect('posts')
 
+
 @login_required(login_url='home')
 def delete_ticket(request, id_ticket):
     ticket = get_object_or_404(Ticket, pk=id_ticket)
@@ -121,9 +121,19 @@ def create_review(request, id_ticket=None):
     if id_ticket is not None:
         ticket = get_object_or_404(Ticket, pk=id_ticket)
         context = {'post': {'content': ticket}}
-        review = Review(ticket=ticket, rating=None, headline=None, body=None, user=request.user, time_created=None)
+        review = Review(ticket=ticket,
+                        rating=None,
+                        headline=None,
+                        body=None,
+                        user=request.user,
+                        time_created=None)
     else:
-        review = Review(ticket=None, rating=None, headline=None, body=None, user=request.user, time_created=None)
+        review = Review(ticket=None,
+                        rating=None,
+                        headline=None,
+                        body=None,
+                        user=request.user,
+                        time_created=None)
     if request.method == 'GET':
         form = ReviewForm(instance=review)
         context['form'] = form
@@ -131,7 +141,7 @@ def create_review(request, id_ticket=None):
     elif request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            article = form.save()
+            form.save()
             ticket.save()
             return redirect('flux')
         else:
@@ -155,6 +165,7 @@ def modify_review(request, id_review):
             form.save()
             return redirect('posts')
 
+
 @login_required(login_url='home')
 def delete_review(request, id_review):
     review = get_object_or_404(Review, pk=id_review)
@@ -165,7 +176,6 @@ def delete_review(request, id_review):
 
 @login_required(login_url='home')
 def create_ticketreview(request):
-    context = {}
     if request.method == 'GET':
         form = TicketReviewForm()
         return render(request, 'review/addticketreview.html', {'form': form})
@@ -173,8 +183,8 @@ def create_ticketreview(request):
         data = request.POST
         ticket_form = TicketForm({'title': data['ticket_title'],
                                   'user': request.user,
-                                 'description': data['ticket_description'],
-                                 'image': data['ticket_image']})
+                                  'description': data['ticket_description'],
+                                  'image': data['ticket_image']})
         if ticket_form.is_valid():
             ticket = ticket_form.save()
             review_form = ReviewForm({'ticket': ticket,
@@ -185,7 +195,7 @@ def create_ticketreview(request):
             if review_form.is_valid():
                 review_form.save()
                 return redirect('flux')
- 
+
 
 @login_required(login_url='home')
 def follow(request):
@@ -218,7 +228,7 @@ def posts(request):
         if Review.objects.filter(ticket=ticket):
             ticket.answered = True
     posts = sorted(chain(tickets, reviews),
-                      key=lambda post: post.time_created,
-                      reverse=True)
+                   key=lambda post: post.time_created,
+                   reverse=True)
     context = {'posts': annotate_post(posts)}
     return render(request, 'review/posts.html', context)

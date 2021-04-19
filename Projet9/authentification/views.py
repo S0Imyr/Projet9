@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 
 from .forms import CreateUserForm
+
 
 def login_page(request):
     if request.user.is_authenticated:
@@ -42,9 +41,3 @@ def register(request):
                 return redirect('home')
         context = {'form': form}
         return render(request, 'authentification/createaccount.html', context)
-
-
-@login_required(login_url='home')
-def modify_account(request, id_user):
-    context = {'id_user': id_user}
-    return render(request, 'authentification/modifyaccount.html')
