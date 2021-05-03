@@ -340,6 +340,12 @@ body {
             font-size: 0.8em;
         }
     }
+
+    .ticket-details__button{
+        a {
+            font-size: 10px;
+        }
+    }
 }
 
 @-moz-document url-prefix() {

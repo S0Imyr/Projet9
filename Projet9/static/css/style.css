@@ -120,6 +120,9 @@ a {
   }
   header .logo {
     grid-column: 1/span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   header .logo img {
     width: 84.2px;

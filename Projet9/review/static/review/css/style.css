@@ -327,6 +327,10 @@ section table tr {
   .review-details__ticket h3 {
     font-size: 0.8em;
   }
+
+  .ticket-details__button a {
+    font-size: 10px;
+  }
 }
 @-moz-document url-prefix() {
   .ticket-details .ticket-details__body {

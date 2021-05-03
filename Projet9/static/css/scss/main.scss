@@ -132,6 +132,9 @@ a {
         }
         .logo{
             grid-column: 1 / span 1 ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img {
                 width: 84.2px;
                 height: 100px;
