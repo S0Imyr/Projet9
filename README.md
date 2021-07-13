@@ -49,14 +49,14 @@ Revenir dans le terminal et tapper :
 Lorsque le serveur fonctionne, après l'étape 12 de la procédure, le site internet est accessible à l'adresse : [http://localhost:8000/home/](http://localhost:8000/home/).
 
 Voici quelques comptes pour explorer :
-    - Utilisateur : johann 
-      Mot de passe : goethegoethe
+  - Utilisateur : johann 
+    Mot de passe : goethegoethe
 
-    - Utilisateur : leon 
-      Mot de passe : tolsoitolstoi
+  - Utilisateur : leon 
+    Mot de passe : tolstoitolstoi
 
-    - Utilisateur : ernest
-      Mot de passe : hemingway
+  - Utilisateur : ernest
+    Mot de passe : hemingway
 
 Une fois installé, toutes les étapes ne sont pas nécessaires. Pour les lancements ultérieurs du serveur de l'API, il suffit d'exécuter les étapes 4 et 12 à partir du répertoire racine du projet.
 
