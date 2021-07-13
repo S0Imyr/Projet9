@@ -12,8 +12,12 @@ Sur le terminal se placer sur un dossier cible.
 Puis suivre les étapes suivantes :
 1. Cloner le dépôt ici présent en tapant: `$ git clone https://github.com/S0Imyr/Projet9.git`
 2. Accéder au dossier ainsi créé avec la commande : `$ cd Projet9`
-3. Créer un environnement virtuel pour le projet avec `$ python -m venv env` sous windows ou `$ python3 -m venv env` sous macos ou linux.
-4. Activez l'environnement virtuel avec `$ source env/Scripts/activate` sous windows ou `$ source env/bin/activate` sous MacOS ou Linux.
+3. Créer un environnement virtuel pour le projet avec 
+    - `$ python -m venv env` sous windows 
+    - ou `$ python3 -m venv env` sous macos ou linux.
+4. Activez l'environnement virtuel avec 
+    - `$ source env/Scripts/activate` sous windows 
+    - ou `$ source env/bin/activate` sous MacOS ou Linux.
 5. Installez les dépendances du projet avec la commande `$ pip install -r requirements.txt`
 
 ### Creation de la base de données
