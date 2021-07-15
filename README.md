@@ -1,4 +1,4 @@
-# Projet9
+# Projet 9
 
 ### Principe et configuration nécessaire :
 Il s'agit de créer un site internet qui met en relation des utilisateurs pour échanger leurs avis sur des livres. Il est réalisé dans le cadre d'une formation.
@@ -27,7 +27,7 @@ Puis suivre les étapes suivantes :
 `DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projet9db',
+        'NAME': 'projet9',
         'USER': 'UserName',
         'PASSWORD': '',
         'HOST': '',
@@ -63,3 +63,4 @@ Une fois installé, toutes les étapes ne sont pas nécessaires. Pour les lancem
 ## Arrêter le serveur
 
 Pour arrêter le serveur aller dans le terminal où il a été lancé, puis appuyer sur les touches Ctrl+C.
+
