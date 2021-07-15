@@ -46,11 +46,8 @@ Revenir dans le terminal et tapper :
 
 12. Démarrer le serveur avec `$ python manage.py runserver`
 
-Lorsque le serveur fonctionne, après l'étape 12 de la procédure, on peut :
- - Se créer un compte avec l'url : [http://127.0.0.1:8000/api/signup/](http://127.0.0.1:8000/api/signup/).
- - Obtenir un token avec : [http://127.0.0.1:8000/api/login/](http://127.0.0.1:8000/api/login/).
+Lorsque le serveur fonctionne, après l'étape 12 de la procédure, le site internet est accessible à l'adresse : [http://localhost:8000/api/](http://localhost:8000/api/).
 
- Pour les autres endpoints, il faudra fournir le token.
  
 Voici quelques comptes pour explorer :
   - Utilisateur : johann, 
