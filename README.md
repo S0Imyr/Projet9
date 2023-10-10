@@ -26,12 +26,12 @@ Puis suivre les étapes suivantes :
 7. Renseigner DATABASE_NAME dans src/config/settings.py :
 `DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DATABASE_NAME,                                 ### ici
-        'USER': POSTGRES_USER,
-        'PASSWORD': POSTGRES_PASSWORD,
-        'HOST': '',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',  
+        'NAME': DATABASE_NAME,                                 ### ici  
+        'USER': POSTGRES_USER,  
+        'PASSWORD': POSTGRES_PASSWORD,  
+        'HOST': '',  
+        'PORT': '5432',  
     }
 }`
 8. Se placer dans le dossier src : `cd src`
