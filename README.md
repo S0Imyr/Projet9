@@ -23,7 +23,7 @@ Puis suivre les étapes suivantes :
 ## Creation de la base de données
 
 6. Créer la base de données DATABASE_NAME avec votre nom d'utilisateur sous PostgreSQL : `createdb -O UserName DATABASE_NAME`
-7. Renseigner DATABASE_NAME dans src/config/settings.py :
+7. Renseigner DATABASE_NAME dans src/config/settings.py :  
 ```DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
