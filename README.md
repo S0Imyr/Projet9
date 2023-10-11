@@ -1,6 +1,6 @@
 # Application de critique de livre avec Django
 
-## Principe :
+## Principe
 Il s'agit de créer un site internet qui met en relation des utilisateurs pour échanger leurs avis sur des livres. Il est réalisé dans le cadre d'une formation.
 
 Ce projet nécessite d'installer python, django et PostgreSQL.
@@ -19,6 +19,19 @@ Puis suivre les étapes suivantes :
     - `./env/Scripts/activate` sous windows 
     - ou `source env/bin/activate` sous MacOS ou Linux.
 5. Installez les dépendances du projet avec la commande `pip install -r requirements.txt`
+
+### Variables d'environnement
+
+Ajouter un fichier .env dans le dossier Book_review_django avec ces variables :
+```
+SECRET_KEY = ''
+DEBUG = True
+ALLOWED_HOSTS = 'localhost 127.0.0.1'
+POSTGRES_USER = ''
+POSTGRES_PASSWORD = ''
+```
+Les variables POSTGRES_USER et POSTGRES_PASSWORD correspondent à l'utilisateur qui administre votre base de données sur Postgresql.  
+SECRET_KEY peut être générer sur https://djecrety.ir/
 
 ## Creation de la base de données
 
