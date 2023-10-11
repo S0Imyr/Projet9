@@ -22,21 +22,21 @@ Puis suivre les étapes suivantes :
 
 ## Creation de la base de données
 
-6. Créer la base de données avec votre nom d'utilisateur sous PostgreSQL : `createdb -O UserName projet9`
-7. Renseigner votre nom d'utilisateur dans Book_review_django/projet-9/settings.py :  
+6. Créer la base de données DATABASE_NAME avec votre nom d'utilisateur sous PostgreSQL : `createdb -O UserName DATABASE_NAME`
+7. Renseigner DATABASE_NAME dans src/config/settings.py :
 ```
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projet9',
-        'USER': 'UserName',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '5432',
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': DATABASE_NAME,                        
+       'USER': POSTGRES_USER,                    
+       'PASSWORD': POSTGRES_PASSWORD,            
+       'HOST': '',                               
+       'PORT': '5432',                            
     }
 }
 ```
-8. Une nouvelle fois : `cd Book_review_django`
+8. Se placer dans le dossier src : `cd src`
 9. Appliquer les migrations `python manage.py migrate`
 10. Alimenter la base de données des utilisateurs `python manage.py loaddata authentification/fixtures/auth.json`
 11. Alimenter la base de données des critiques `python manage.py loaddata review/fixtures/review.json`
@@ -46,7 +46,7 @@ En cas de problème d'encodage, ne pas hésiter à utiliser un éditeur pour ouv
 ## Lancement du serveur en local
 Revenir dans le terminal et tapper :
 
-12. Démarrer le serveur avec `$ python manage.py runserver`
+12. Démarrer le serveur avec `python manage.py runserver`
 
 Lorsque le serveur fonctionne, après l'étape 12 de la procédure, le site internet est accessible à l'adresse : [http://localhost:8000/api/](http://localhost:8000/api/).
 
