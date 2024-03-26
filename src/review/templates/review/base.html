@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock%}</title>
     {% load static %}
-        <link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <link rel="stylesheet" href="{% static '/css/style.css'%}">
     {% block addcss %}
         
     {% endblock %}
-    <title>LIT Review</title>
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <img src="{% static 'images/Logo.png'%}" alt="Logo LIT Review">
-        </div>
-        {%  include 'navbar.html' %}
+        {%  include 'review/navbar.html' %}
     </header>
-    {% block content %}
-    {% endblock %}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
