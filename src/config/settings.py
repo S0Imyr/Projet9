@@ -11,6 +11,7 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
 
 POSTGRES_USER = str(os.getenv('POSTGRES_USER'))
 POSTGRES_PASSWORD = str(os.getenv('POSTGRES_PASSWORD'))
+POSTGRES_DB = str(os.getenv('POSTGRES_DB'))
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projet9db',
+        'NAME': POSTGRES_DB,
         'USER': POSTGRES_USER,
         'PASSWORD': POSTGRES_PASSWORD,
         'HOST': '',

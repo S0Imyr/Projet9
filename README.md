@@ -36,23 +36,14 @@ SECRET_KEY peut être générer sur https://djecrety.ir/
 ## Creation de la base de données
 
 6. Créer la base de données DATABASE_NAME avec votre nom d'utilisateur sous PostgreSQL : `createdb -O UserName DATABASE_NAME`
-7. Renseigner DATABASE_NAME dans src/config/settings.py :
-```
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': DATABASE_NAME,                        
-       'USER': POSTGRES_USER,                    
-       'PASSWORD': POSTGRES_PASSWORD,            
-       'HOST': '',                               
-       'PORT': '5432',                            
-    }
-}
-```
+7. Renseigner DATABASE_NAME dans le fichier .env :
+`POSTGRES_DB = <DATABASE_NAME>`
 8. Se placer dans le dossier src : `cd src`
 9. Appliquer les migrations `python manage.py migrate`
 10. Alimenter la base de données des utilisateurs `python manage.py loaddata authentification/fixtures/auth.json`
+Pour vérifier, il doit y avoir 10 objets créés.
 11. Alimenter la base de données des critiques `python manage.py loaddata review/fixtures/review.json`
+Pour vérifier, il doit y avoir 26 objets créés.
 
 En cas de problème d'encodage, ne pas hésiter à utiliser un éditeur pour ouvrir et sauvegarder les fichiers JSON avec l'encodage utf-8. Puis réalimenter (étape 10 et 11).
 
