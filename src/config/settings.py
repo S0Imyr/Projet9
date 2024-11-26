@@ -3,17 +3,19 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = os.getenv("DEBUG") == "True"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split()
+if DEBUG:
+    ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
 
 POSTGRES_USER = str(os.getenv('POSTGRES_USER'))
 POSTGRES_PASSWORD = str(os.getenv('POSTGRES_PASSWORD'))
 POSTGRES_DB = str(os.getenv('POSTGRES_DB'))
-
-BASE_DIR = Path(__file__).resolve().parent.parent
+POSTGRES_HOST = str(os.getenv('POSTGRES_HOST', '127.0.0.1'))
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -81,7 +83,7 @@ DATABASES = {
         'NAME': POSTGRES_DB,
         'USER': POSTGRES_USER,
         'PASSWORD': POSTGRES_PASSWORD,
-        'HOST': '',
+        'HOST': POSTGRES_HOST,
         'PORT': '5432',
     }
 }
