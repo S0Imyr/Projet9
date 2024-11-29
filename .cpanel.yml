@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lama9515/book_review_app/
+    - /bin/cp -R * $DEPLOYPATH
+    # Effectuer les migrations de la base de données
+    - cd /home/lama9515/djangoapp && source venv/bin/activate && python manage.py migrate
+
+    # Collecter les fichiers statiques de Django
+    - cd /home/lama9515/djangoapp && source venv/bin/activate && python manage.py collectstatic --noinput
